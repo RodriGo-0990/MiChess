@@ -5,12 +5,10 @@
     box-sizing: border-box;
     font-family: Impact, 'Arial Narrow Bold'
 }
-
 @font-face {
     font-family: 'fontface';
     src: url(../michigan_5/Michigan.ttf) format("opentype");
 }
-
 :root {
     --gradient: linear-gradient( 
         -40deg, 
@@ -19,112 +17,116 @@
         #bcbe9686,
         #787254
         );
-         
-}
 
+    --gradientCard: linear-gradient(
+        -80deg,
+        #3b3b3bae, 
+        #65656526,
+        #e4e4e13e,
+        #5d593947
+    
+    );            
+}
+html{
+    font-size: 60%;
+}
 body {
     width: 100%;
-    height: 900px;
+    height: 100%;
     overflow-y: hidden;
     overflow-x: hidden;
     background-color: rgb(40, 39, 39);
     background-image: url(../img/grunge-checkerboard-texture-background.jpg);
     background-repeat: no-repeat;
-    background-position:  center;
-    background-size: 1000px 900px;
-    justify-content: center;
+    background-size:  100% ;
 }
-
-.center {
-    margin:0 auto;
-    display: flex;
-    flex-wrap: nowrap;
-    max-width: 1500px;
-}
-
 header {
-    padding: 0 20px 0 0;
+    width: 100%;
     background-color: #00000075;
 }
-
+.center {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    max-width: 900px;
+    min-width: 800px;
+}
+.logo {
+    padding-top: 3em;
+    width: 5%;
+}
 .titulo {
     font-family: "fontface";
     font-weight: bolder;
-    color: rgba(238, 233, 211, 0.285);
-    font-size: 40px;
-    width: 40%;
-    padding-right: 100px;
-    padding-top: 60px;
+    color: #eee9d349;
+    font-size: 4rem;
+    width: 45%;
+    padding-top: 30px;
     text-align: left;
     cursor: pointer;
 }
-
-.logo {
-    padding-top: 40px;
-    padding-left: 270px;
-    width: 28%;
-}
-
 .menu {
-    padding-right: 210px;
-    padding-top: 70px;
-    width: 80%;
-    text-align: right;
+    padding-top: 3em;
+    width: 45%;
+    justify-content: right;
 }
-
 .menu a {
     color: rgba(255, 255, 255, 0.755);
     text-decoration: none;
     font-size: x-large;
     font-weight: bold;
-    margin-right: 10px;
-    padding-left: 15px;
+    padding-left: 2rem;
 }
-
 a:hover {
     color: rgb(97, 97, 100);
     transition: 0.8s;
 }
-
 .info {
     margin: 0 auto;
-    padding: 10px;
-    width: 60%;
-    height: 50%;
+    padding: 3rem;
+    width: 60vw;
+    height: 80vh;
     display: flex;
     color: white;
-    font-size: medium;
-    
+    font-size: 2rem;
+    justify-content: center;
+    min-width: 1000px;
+    max-width: 2000px;
 }
-
 .card h2 {
-    padding-bottom: 10px;
+    padding-bottom: 1rem;
     text-align: center;
 }
-
 .texto {
-    font-size: 18px;
+    margin: 0 auto;
+    font-size: 2rem;
     overflow-wrap: auto;
     overflow-y: scroll;
     width: 100%;
-    height: 98%;
+    height: 35rem;
+    text-align: left;
+    line-height: 2rem;
 }
-
 .texto::-webkit-scrollbar {
     display: none;
-    width: 10px;
 }
-
 .card {
-    padding: 50px;
-    width: 300px;
-    height: 450px;
-    margin: 10px;
-    border-bottom-left-radius: 8px;
+    padding: 2em;
+    width: 40%;
+    height: 85%;
+    margin: 1em;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 80px;
+    border-bottom-left-radius: 80px;
     border-bottom-right-radius: 8px;
-    background-image: linear-gradient(#ffffff03 20%, rgba(0, 0, 0, 0.607));
-    letter-spacing: 1px;
-    box-shadow: 20px 30px 10px -10px rgba(0, 0, 0, 0.4);
+    border-top: 12px;
+    background-image: var(--gradientCard);
+    background-position: right;
+    background-size:2400px;
+    transition: background-position 0.9s;
+    box-shadow: 40px 30px 10px -10px rgba(0, 0, 0, 0.786);
     animation: fadeIn 1.5s;
 }
 @keyframes fadeIn {
@@ -137,19 +139,23 @@ a:hover {
 }
 
 .card:hover {
-    background-image: linear-gradient(#7a797929 20%, rgba(0, 0, 0, 0.607));
+    background-position: left;
 }
-
-footer {
+footer{
     width: 100%;
+    background-color: #00000075;
     position: fixed;
-    display:flex;
     bottom: 0;
     right: 0;
     left: 0;
-    padding: 20px 250px;
-    background-color: #00000075;
-    
+}
+.rodapé {
+    margin: 0 auto;
+    display: flex;
+    width: 70%;
+    padding: 3rem;
+    max-width: 900px;
+    min-width: 800px;
 }
 footer a{
     text-decoration: none;
@@ -158,18 +164,20 @@ footer a{
 
 .email {
     width: 80%;
-    font-size: 18px;
+    font-size: 2em;
     color: beige;
     opacity: 0.7;
     cursor: pointer;
 }
 
 .divIcons {
+    width: 40%;
     display: flex;
+    justify-content: center;
 }
 
 .contatoIcon {
-    padding-left: 20px;
+    padding-left: 1em;
     opacity: 0.4;
 }
 
@@ -179,16 +187,18 @@ footer a{
 
 .screen {
     display: flex;
-    padding: 30px;
+    padding: 2em;
     width: 100%;
     height: 450px;
     margin: 10px;
     position: center center;
-    border-bottom-left-radius: 8px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 40px;
     border-bottom-right-radius: 8px;
-    background-image: linear-gradient(#ffffff03 20%, rgba(0, 0, 0, 0.607));
+    background-image: linear-gradient(#17171772 20%, rgba(0, 0, 0, 0.607));
     letter-spacing: 1px;
-    box-shadow: 0 30px 25px 10px rgba(0, 0, 0, 0.541);
+    box-shadow: 40px 30px 10px -10px rgba(0, 0, 0, 0.786);
     animation: fadeIn 1.5s;
     justify-content: center;
 }
@@ -245,7 +255,7 @@ footer a{
     background-size:1000px;
     transition: background-position 0.9s;
     border-radius: 10px;
-    box-shadow: 20px 15px 1px -2px rgba(0, 0, 0, 0.401);
+    box-shadow: 20px 15px 1px -2px #00000066;
     margin-top: 10px;
     margin-left: 50px;
     padding: 10px 40px 10px 40px;
