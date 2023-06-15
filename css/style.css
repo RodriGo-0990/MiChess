@@ -60,7 +60,7 @@ body {
     background-size: cover;
     background-position: center;
     background-size: contain;
-    background-size: 1300px; 
+    background-size: 130em; 
 }
 
 
@@ -77,8 +77,8 @@ header {
     align-items: center;
     justify-content: space-between;
     width: 70%;
-    max-width: 900px;
-    min-width: 800px;
+    max-width: 90em;
+    min-width: 80em;
 }
 .logo {
     padding-top: 3em;
@@ -90,7 +90,7 @@ header {
     color: #eee9d349;
     font-size: 4rem;
     width: 45%;
-    padding-top: 30px;
+    padding-top: 3rem;
     text-align: left;
     cursor: pointer;
 }
@@ -107,7 +107,7 @@ header {
     padding-left: 2rem;
 }
 a:hover {
-    color: rgb(97, 97, 100);
+    color: #616164;
     transition: 0.8s;
 }
 
@@ -121,8 +121,8 @@ a:hover {
     height: 80vh;
     display: flex;
     font-size: 2rem;
-    min-width: 1000px;
-    max-width: 2000px;
+    min-width: 100rem;
+    max-width: 200rem;
     color: white;
 }
 
@@ -150,15 +150,15 @@ a:hover {
     width: 40%;
     height: 85%;
     margin: 1em;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 80px;
-    border-bottom-left-radius: 80px;
-    border-bottom-right-radius: 8px;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 8rem;
+    border-bottom-left-radius: 8rem;
+    border-bottom-right-radius: 2rem;
     background-image: var(--gradientCard);
     background-position: right;
-    background-size:2400px;
+    background-size:240rem;
     transition: background-position 0.9s;
-    box-shadow: 40px 30px 10px -10px rgba(0, 0, 0, 0.786);
+    box-shadow: 4rem 3rem 1rem -1rem #000000c8;
     animation: fadeIn 1.5s;
 }
 .card:hover {
@@ -180,8 +180,8 @@ footer{
     display: flex;
     width: 70%;
     padding: 3rem;
-    max-width: 900px;
-    min-width: 800px;
+    max-width: 90em;
+    min-width: 80em;
 }
 footer a{
     text-decoration: none;
@@ -216,13 +216,13 @@ footer a{
     width: 100%;
     height: 90%;
     margin: 0 auto;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 50px;
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 8px;
-    background-image: linear-gradient(#17171772 20%, rgba(0, 0, 0, 0.607));
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 8rem;
+    border-bottom-left-radius: 4rem;
+    border-bottom-right-radius: 2rem;
+    background-image: linear-gradient(#17171772 20%, #0000009b);
     letter-spacing: 1px;
-    box-shadow: 40px 30px 10px -10px rgba(0, 0, 0, 0.786);
+    box-shadow: 4rem 3rem 1rem -1rem #000000c8;
     animation: fadeIn 1.5s;
     justify-content: center;
 }
@@ -232,31 +232,31 @@ footer a{
     padding: 0.5em;
     width: 42rem;
     height: 42rem;
-    border: 10px solid #391f02f2;
+    border: 1rem solid #391f02f2;
 
       
 }
 .tempo {
-    margin: 10px;
-    margin-bottom: 340px;
-    color: rgba(230, 230, 115, 0.829);
+    margin: 1rem;
+    margin-bottom: 34rem;
+    color: #e6e673d3;
 }
 .options {
     display: inline;
-    padding-top: 100px;
-    padding-left: 20px;
+    padding-top: 10rem;
+    padding-left: 2em;
 }
 .options p {
-    margin-bottom: 10px;
-    font-size: 18px;
+    margin-bottom: 1em;
+    font-size: 1em;
     text-align: center;
 }
 .options label {
-    color: rgba(235, 235, 144, 0.693);
+    color: #ebeb90b1;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 1.3em;
     font-family: "fontface";
-    padding: 40px 10px 30px;
+    padding: 1rem 1rem 1rem;
 }
 .input{
     cursor: pointer;
@@ -265,26 +265,26 @@ footer a{
     display: block;
     font-family: "fontface";
     font-weight: bolder;
-    font-size: 25px;
-    letter-spacing: 2px;
+    font-size: 1.3em;
+    letter-spacing: 0.2rem;
     border: #444131 solid;
     background-image: var(--gradient);
     background-position: right;
-    background-size:1000px;
+    background-size:100rem;
     transition: background-position 0.9s;
-    border-radius: 10px;
-    box-shadow: 20px 15px 1px -2px #00000066;
-    margin-top: 10px;
-    margin-left: 50px;
-    padding: 10px 40px 10px 40px;
+    border-radius: 1rem;
+    box-shadow: 2rem 1.5rem 0.1em -0.2rem #00000066;
+    margin-top: 1em;
+    margin-left: 5rem;
+    padding: 1rem 4rem 1rem 4rem;
     cursor: pointer;
 }
 .play:hover {
     background-position: left;
 }
 
-/* media query */
-@media (max-width: 800px) {
+/* media queries */
+@media (min-device-width:491px) and (max-device-width: 800px) {
     body {
         background-size:auto;
     }
@@ -292,9 +292,9 @@ footer a{
         margin-top: 20rem;
     }
 }
-@media (max-width: 490px) {
+@media (max-device-width: 490px) {
     body {
-        background-size:  2000px;
+        background-size:  200rem;
     }
     .info{
         margin-top: 60rem;
@@ -312,7 +312,8 @@ footer a{
     }
     .menu a {
         font-size: 5em;
-        padding-left: 5rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
     }
     .titulo {
         font-size: 11rem;
@@ -326,10 +327,11 @@ footer a{
         width: unset;
         font-size: 4em;
         text-align: center;
+        line-height: 1.3;
     }
     .email a img{
-        width: 32px;
-        height: 32px;
+        width: 3rem;
+        height: 3rem;
     }
     .divIcons {
         width:unset;
