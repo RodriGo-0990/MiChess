@@ -5,10 +5,26 @@
     box-sizing: border-box;
     font-family: Impact, 'Arial Narrow Bold'
 }
+
+/* Animação */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/*fonte*/
 @font-face {
     font-family: 'fontface';
     src: url(../michigan_5/Michigan.ttf) format("opentype");
 }
+
+
+/* variantes */
 :root {
     --gradient: linear-gradient( 
         -40deg, 
@@ -27,6 +43,9 @@
     
     );            
 }
+
+
+/* Geral */
 html{
     font-size: 60%;
 }
@@ -37,12 +56,20 @@ body {
     overflow-x: hidden;
     background-color: rgb(40, 39, 39);
     background-image: url(../img/grunge-checkerboard-texture-background.jpg);
-    background-repeat: no-repeat;
-    background-size:  100% ;
+    background-repeat:repeat-y;
+    background-size: cover;
+    background-position: center;
+    background-size: contain;
+    background-size: 1300px; 
 }
+
+
+/* Cabeçalho */
 header {
     width: 100%;
     background-color: #00000075;
+    position: fixed;
+    top: 0;
 }
 .center {
     margin: 0 auto;
@@ -83,21 +110,27 @@ a:hover {
     color: rgb(97, 97, 100);
     transition: 0.8s;
 }
-.info {
+
+
+/* conteúdo geral */
+.info {    
     margin: 0 auto;
+    margin-top: 5em;
     padding: 3rem;
     width: 60vw;
     height: 80vh;
     display: flex;
-    color: white;
     font-size: 2rem;
-    justify-content: center;
     min-width: 1000px;
     max-width: 2000px;
+    color: white;
 }
+
+
+/* Cards */
 .card h2 {
     padding-bottom: 1rem;
-    text-align: center;
+    text-align: center;  
 }
 .texto {
     margin: 0 auto;
@@ -105,7 +138,7 @@ a:hover {
     overflow-wrap: auto;
     overflow-y: scroll;
     width: 100%;
-    height: 35rem;
+    height: 80%;
     text-align: left;
     line-height: 2rem;
 }
@@ -121,7 +154,6 @@ a:hover {
     border-top-right-radius: 80px;
     border-bottom-left-radius: 80px;
     border-bottom-right-radius: 8px;
-    border-top: 12px;
     background-image: var(--gradientCard);
     background-position: right;
     background-size:2400px;
@@ -129,17 +161,12 @@ a:hover {
     box-shadow: 40px 30px 10px -10px rgba(0, 0, 0, 0.786);
     animation: fadeIn 1.5s;
 }
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
 .card:hover {
     background-position: left;
 }
+
+
+/* Rodapé */
 footer{
     width: 100%;
     background-color: #00000075;
@@ -160,7 +187,6 @@ footer a{
     text-decoration: none;
     color: inherit;
 }
-
 .email {
     width: 80%;
     font-size: 2em;
@@ -168,29 +194,28 @@ footer a{
     opacity: 0.7;
     cursor: pointer;
 }
-
 .divIcons {
     width: 40%;
     display: flex;
     justify-content: center;
 }
-
 .contatoIcon {
     padding-left: 1em;
     opacity: 0.4;
 }
-
 .contatoIcon :hover {
     opacity: 0.6;
 }
 
+
+
+/* XADREZ */
 .screen {
     display: flex;
     padding: 2em;
     width: 100%;
-    height: 450px;
-    margin: 10px;
-    position: center center;
+    height: 90%;
+    margin: 0 auto;
     border-top-left-radius: 10px;
     border-top-right-radius: 50px;
     border-bottom-left-radius: 40px;
@@ -201,13 +226,12 @@ footer a{
     animation: fadeIn 1.5s;
     justify-content: center;
 }
-
 .canvas {
     background-image: url(../img/board1.jpg);
     background-size: cover;
-    padding: 10px;
-    width: 400px;
-    height: 400px;
+    padding: 0.5em;
+    width: 42rem;
+    height: 42rem;
     border: 10px solid #391f02f2;
 
       
@@ -217,19 +241,16 @@ footer a{
     margin-bottom: 340px;
     color: rgba(230, 230, 115, 0.829);
 }
-
 .options {
     display: inline;
     padding-top: 100px;
     padding-left: 20px;
 }
-
 .options p {
     margin-bottom: 10px;
     font-size: 18px;
     text-align: center;
 }
-
 .options label {
     color: rgba(235, 235, 144, 0.693);
     font-weight: bold;
@@ -237,11 +258,9 @@ footer a{
     font-family: "fontface";
     padding: 40px 10px 30px;
 }
-
 .input{
     cursor: pointer;
 }
-
 .play {
     display: block;
     font-family: "fontface";
@@ -260,7 +279,62 @@ footer a{
     padding: 10px 40px 10px 40px;
     cursor: pointer;
 }
-
 .play:hover {
     background-position: left;
+}
+
+/* media query */
+@media (max-width: 800px) {
+    body {
+        background-size:auto;
+    }
+    .info{
+        margin-top: 20rem;
+    }
+}
+@media (max-width: 490px) {
+    body {
+        background-size:  2000px;
+    }
+    .info{
+        margin-top: 60rem;
+    }
+    .center {
+        flex-direction:column;
+    }
+    .logo {
+        padding-top: 9em;
+        width: unset;
+    }
+    .menu{
+        width:unset;
+        padding: unset;
+    }
+    .menu a {
+        font-size: 5em;
+        padding-left: 5rem;
+    }
+    .titulo {
+        font-size: 11rem;
+        padding-top: inherit;
+        width: unset;
+    }
+    .rodapé {
+        flex-direction:column-reverse;
+    }
+    .email {
+        width: unset;
+        font-size: 4em;
+        text-align: center;
+    }
+    .divIcons {
+        width:unset;
+        justify-content: center;
+        padding: 1em;
+    }
+    .contatoIcon a img{
+        width: 10em;
+        height: 10em;
+
+    }
 }
