@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Impact, 'Arial Narrow Bold'
+    font-family: 'Arial Narrow Bold'
 }
 
 /* Animação */
@@ -326,6 +326,10 @@ footer a{
         width: unset;
         font-size: 4em;
         text-align: center;
+    }
+    .email a img{
+        width: 32px;
+        height: 32px;
     }
     .divIcons {
         width:unset;
