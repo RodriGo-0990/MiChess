@@ -28,6 +28,7 @@ let casaAtualY;
 let casaDestino;
 let casaDestinoY;
 let selectedPiece;
+let pecaEliminada;
 let casaEnPassant;
 let casaRoqueMove;
 let casaRoqueDama;
@@ -183,6 +184,9 @@ function startTimer() {
 function playTimeOverAlert() {//mensagem tempo esgotado
     alert("Tempo esgotado, " + alertTurno() + " vencem!")
 }
+function playXequeMateAlert() {//mensagem de xeque-mate
+    alert("Xeque-Mate!!! " + alertTurno() + " vencem!");
+}
 function pausarTempo(turno) {
     if (turno == pretas) {
         clearInterval(tempo2);
@@ -229,6 +233,25 @@ function checkXeque() {//conferir se o lance está em xeque
 
     }
     return isxeque;
+}
+function checkXequeMate(obj){//xeque-mate!!!
+    var Bking = new blackKing(0,0);
+    var Wking = new whiteKing(0,0);
+
+    if (Object.is(obj.constructor, Wking.constructor)) {
+        playWinSound()
+        setTimeout(function () {
+            playXequeMateAlert();
+            window.location.reload()
+        }, 100)
+    }
+    if (Object.is(obj.constructor, Bking.constructor)) {
+        playWinSound()
+        setTimeout(function () {
+            playXequeMateAlert();
+            window.location.reload()
+        }, 100)
+    }
 }
 //----------------------------------------
 
@@ -371,6 +394,7 @@ function instanciarTorre(x, y) {
 function verificaAtaque(valor) {
     var valida = false;
     if (boardgame[valor].getPiece().getAtacked() && selectedPiece != null) {
+        pecaEliminada = boardgame[valor].getPiece();
         casaAtual.clear(context);
         casaAtual.takeOffPiece();
         casaDestino = boardgame[valor];//para o caso de promoção do peão;
@@ -381,11 +405,9 @@ function verificaAtaque(valor) {
         valida = true;
         reset();
         playTakePiece();
+        checkXequeMate(pecaEliminada);
     }
-
-
     return valida;
-
 }
 function movement(value, thisTeam) {
     //metodo genérico que pinta as casas de movimentação, iterando sobre o Array
