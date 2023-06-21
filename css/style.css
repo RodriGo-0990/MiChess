@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +12,7 @@
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -26,29 +28,25 @@
 
 /* variantes */
 :root {
-    --gradient: linear-gradient( 
-        -40deg, 
-       
-        #443d0fda , 
-        #bcbe9686,
-        #787254
-        );
+    --gradient: linear-gradient(-40deg,
 
-    --gradientCard: linear-gradient(
-        -80deg,
-        #3b3b3bae, 
-        #65656526,
-        #e4e4e13e,
-        #5d593947
-    
-    );            
+            #443d0fda,
+            #bcbe9686,
+            #787254);
+
+    --gradientCard: linear-gradient(-80deg,
+            #3b3b3bae,
+            #65656526,
+            #e4e4e13e,
+            #5d593947);
 }
 
 
 /* Geral */
-html{
+html {
     font-size: 60%;
 }
+
 body {
     width: 100%;
     height: 100%;
@@ -56,11 +54,11 @@ body {
     overflow-x: hidden;
     background-color: rgb(40, 39, 39);
     background-image: url(../img/grunge-checkerboard-texture-background.jpg);
-    background-repeat:repeat-y;
+    background-repeat: repeat-y;
     background-size: cover;
     background-position: center;
     background-size: contain;
-    background-size: 130em; 
+    background-size: 130em;
 }
 
 
@@ -71,6 +69,7 @@ header {
     position: fixed;
     top: 0;
 }
+
 .center {
     margin: 0 auto;
     display: flex;
@@ -80,10 +79,12 @@ header {
     max-width: 90em;
     min-width: 80em;
 }
+
 .logo {
     padding-top: 3em;
     width: 5%;
 }
+
 .titulo {
     font-family: "fontface";
     font-weight: bolder;
@@ -94,11 +95,13 @@ header {
     text-align: left;
     cursor: pointer;
 }
+
 .menu {
     padding-top: 3em;
     width: 45%;
     justify-content: right;
 }
+
 .menu a {
     color: rgba(255, 255, 255, 0.755);
     text-decoration: none;
@@ -106,6 +109,7 @@ header {
     font-weight: bold;
     padding-left: 2rem;
 }
+
 a:hover {
     color: #616164;
     transition: 0.8s;
@@ -113,7 +117,7 @@ a:hover {
 
 
 /* conteúdo geral */
-.info {    
+.info {
     margin: 0 auto;
     margin-top: 5em;
     padding: 3rem;
@@ -130,8 +134,9 @@ a:hover {
 /* Cards */
 .card h2 {
     padding-bottom: 1rem;
-    text-align: center;  
+    text-align: center;
 }
+
 .texto {
     margin: 0 auto;
     font-size: 2rem;
@@ -142,9 +147,11 @@ a:hover {
     text-align: left;
     line-height: 2rem;
 }
+
 .texto::-webkit-scrollbar {
     display: none;
 }
+
 .card {
     padding: 2em;
     width: 40%;
@@ -156,18 +163,19 @@ a:hover {
     border-bottom-right-radius: 2rem;
     background-image: var(--gradientCard);
     background-position: right;
-    background-size:240rem;
+    background-size: 240rem;
     transition: background-position 0.9s;
     box-shadow: 4rem 3rem 1rem -1rem #000000c8;
     animation: fadeIn 1.5s;
 }
+
 .card:hover {
     background-position: left;
 }
 
 
 /* Rodapé */
-footer{
+footer {
     width: 100%;
     background-color: #00000075;
     position: fixed;
@@ -175,6 +183,7 @@ footer{
     right: 0;
     left: 0;
 }
+
 .rodapé {
     margin: 0 auto;
     display: flex;
@@ -183,10 +192,12 @@ footer{
     max-width: 90em;
     min-width: 80em;
 }
-footer a{
+
+footer a {
     text-decoration: none;
     color: inherit;
 }
+
 .email {
     width: 80%;
     font-size: 2em;
@@ -194,15 +205,18 @@ footer a{
     opacity: 0.7;
     cursor: pointer;
 }
+
 .divIcons {
     width: 40%;
     display: flex;
     justify-content: center;
 }
+
 .contatoIcon {
     padding-left: 1em;
     opacity: 0.4;
 }
+
 .contatoIcon :hover {
     opacity: 0.6;
 }
@@ -226,31 +240,34 @@ footer a{
     animation: fadeIn 1.5s;
     justify-content: center;
 }
+
 .canvas {
     background-image: url(../img/board1.jpg);
     background-size: cover;
     padding: 0.5em;
-    width: 42rem;
-    height: 42rem;
+    width: 21em;
+    height: 21em;
     border: 1rem solid #391f02f2;
-
-      
 }
+
 .tempo {
     margin: 1rem;
     margin-bottom: 34rem;
     color: #e6e673d3;
 }
+
 .options {
     display: inline;
     padding-top: 10rem;
     padding-left: 2em;
 }
+
 .options p {
     margin-bottom: 1em;
     font-size: 1em;
     text-align: center;
 }
+
 .options label {
     color: #ebeb90b1;
     font-weight: bold;
@@ -258,9 +275,11 @@ footer a{
     font-family: "fontface";
     padding: 1rem 1rem 1rem;
 }
-.input{
+
+.input {
     cursor: pointer;
 }
+
 .play {
     display: block;
     font-family: "fontface";
@@ -270,7 +289,7 @@ footer a{
     border: #444131 solid;
     background-image: var(--gradient);
     background-position: right;
-    background-size:100rem;
+    background-size: 100rem;
     transition: background-position 0.9s;
     border-radius: 1rem;
     box-shadow: 2rem 1.5rem 0.1em -0.2rem #00000066;
@@ -279,68 +298,145 @@ footer a{
     padding: 1rem 4rem 1rem 4rem;
     cursor: pointer;
 }
+
 .play:hover {
     background-position: left;
 }
 
 /* media queries */
-@media (min-device-width:491px) and (max-device-width: 800px) {
+
+/* Largura */
+@media (min-device-width:480px) and (max-device-width: 800px) {
     body {
-        background-size:auto;
+        background-size: auto;
     }
-    .info{
+
+    .info {
         margin-top: 20rem;
     }
 }
+
 @media (max-device-width: 490px) {
     body {
-        background-size:  200rem;
+        background-size: 200rem;
     }
-    .info{
+
+    .info {
         margin-top: 60rem;
     }
+
     .center {
-        flex-direction:column;
+        flex-direction: column;
     }
+
     .logo {
         padding-top: 9em;
         width: unset;
     }
-    .menu{
-        width:unset;
+
+    .menu {
+        width: unset;
         padding: unset;
     }
+
     .menu a {
         font-size: 5em;
         padding-left: 3rem;
         padding-right: 3rem;
     }
+
     .titulo {
         font-size: 11rem;
         padding-top: inherit;
         width: unset;
     }
+
     .rodapé {
-        flex-direction:column-reverse;
+        flex-direction: column-reverse;
     }
+
     .email {
         width: unset;
         font-size: 4em;
         text-align: center;
         line-height: 1.3;
     }
-    .email a img{
+
+    .email a img {
         width: 3rem;
         height: 3rem;
     }
+
     .divIcons {
-        width:unset;
+        width: unset;
         justify-content: center;
         padding: 1em;
     }
-    .contatoIcon a img{
+
+    .contatoIcon a img {
         width: 10em;
         height: 10em;
 
     }
+}
+
+
+/* Altura */
+@media (max-device-height:375px){
+    header{
+        display: none;
+    }
+    footer{
+        display: none;
+    }
+    .info{
+        margin-top: 0;
+        padding: 0;
+        height: 140vh;
+    }
+    .rodapé{
+        padding: 1rem;
+    }
+    .logo{
+        padding-top: 1em;    
+    }
+}
+
+@media (min-device-height:376px) and (max-device-height:420px){
+    header{
+        display: none;
+    }
+    footer{
+        display: none;
+    }
+    .info{
+        margin-top: 0;
+        padding: 0;
+        height: 115vh;
+    }
+    .rodapé{
+        padding: 1rem;
+    }
+    .logo{
+        padding-top: 1em;    
+    }
+}
+
+@media (min-device-height: 421px ) and (max-device-height: 700px) {
+    
+    .screen{
+        height:auto;
+        padding: 5px;
+    }
+    .info{ 
+        padding: 0;
+        height: 70vh;
+    }
+    .rodapé{
+        padding: 1rem;
+    }
+    .logo{
+        padding-top: 1em;    
+    }
+  
 }
