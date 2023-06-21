@@ -382,61 +382,80 @@ footer a {
 
 
 /* Altura */
-@media (max-device-height:375px){
-    header{
+@media (max-device-height:375px) {
+    header {
         display: none;
     }
-    footer{
+
+    footer {
         display: none;
     }
-    .info{
+
+    .info {
         margin-top: 0;
         padding: 0;
         height: 140vh;
     }
-    .rodapé{
+
+    .screen{
+        padding: 0;
+    }
+
+    .rodapé {
         padding: 1rem;
     }
-    .logo{
-        padding-top: 1em;    
+
+    .logo {
+        padding-top: 1em;
     }
 }
 
-@media (min-device-height:376px) and (max-device-height:420px){
-    header{
+@media (min-device-height:376px) and (max-device-height:420px) {
+    header {
         display: none;
     }
-    footer{
+
+    .screen {
+        padding: 0;
+    }
+
+    footer {
         display: none;
     }
-    .info{
+
+    .info {
         margin-top: 0;
         padding: 0;
         height: 115vh;
     }
-    .rodapé{
+
+    .rodapé {
         padding: 1rem;
     }
-    .logo{
-        padding-top: 1em;    
+
+    .logo {
+        padding-top: 1em;
     }
 }
 
-@media (min-device-height: 421px ) and (max-device-height: 700px) {
-    
-    .screen{
-        height:auto;
+@media (min-device-height: 421px) and (max-device-height: 700px) {
+
+    .screen {
+        height: auto;
         padding: 5px;
     }
-    .info{ 
+
+    .info {
         padding: 0;
         height: 70vh;
     }
-    .rodapé{
+
+    .rodapé {
         padding: 1rem;
     }
-    .logo{
-        padding-top: 1em;    
+
+    .logo {
+        padding-top: 1em;
     }
-  
+
 }
