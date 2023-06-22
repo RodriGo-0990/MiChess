@@ -241,6 +241,11 @@ footer a {
     justify-content: center;
 }
 
+.divCanvas {
+    width: 60%;
+    display: flex;
+}
+
 .canvas {
     background-image: url(../img/board1.jpg);
     background-size: cover;
@@ -251,8 +256,9 @@ footer a {
 }
 
 .tempo {
-    margin: 1rem;
-    margin-bottom: 34rem;
+    margin-left: 0.5em;
+    margin-top: 2em;
+    margin-bottom: 15em;
     color: #e6e673d3;
 }
 
@@ -306,7 +312,7 @@ footer a {
 /* media queries */
 
 /* Largura */
-@media (min-device-width:480px) and (max-device-width: 800px) {
+@media (min-device-width:320px) and (max-device-width: 760px) {
     body {
         background-size: auto;
     }
@@ -323,6 +329,11 @@ footer a {
 
     .info {
         margin-top: 60rem;
+    }
+    .screen{
+        padding: 0;
+        padding-top:1em;
+        height: auto;
     }
 
     .center {
@@ -376,7 +387,6 @@ footer a {
     .contatoIcon a img {
         width: 10em;
         height: 10em;
-
     }
 }
 
@@ -393,20 +403,18 @@ footer a {
 
     .info {
         margin-top: 0;
-        padding: 0;
-        height: 140vh;
+        height: 150vh;
     }
 
-    .screen{
-        padding: 0;
+    .canvas {
+        background-size: 16em;
+        width: 17em;
+        height: 17em;
     }
 
-    .rodapé {
-        padding: 1rem;
-    }
-
-    .logo {
-        padding-top: 1em;
+    .tempo {
+        margin-top: 1em;
+        margin-bottom: 13em;
     }
 }
 
@@ -414,42 +422,48 @@ footer a {
     header {
         display: none;
     }
-
-    .screen {
-        padding: 0;
-    }
-
     footer {
         display: none;
     }
 
     .info {
         margin-top: 0;
-        padding: 0;
-        height: 115vh;
+        height: 150vh;
     }
 
-    .rodapé {
-        padding: 1rem;
+    .canvas {
+        background-size: 15em;
+        width: 16em;
+        height: 16em;
     }
 
-    .logo {
-        padding-top: 1em;
+    .tempo {
+        margin-top: 1em;
+        margin-bottom: 11em;
     }
 }
 
-@media (min-device-height: 421px) and (max-device-height: 700px) {
+@media (min-device-height: 421px) and (max-device-height: 630px) {
 
     .screen {
-        height: auto;
-        padding: 5px;
+        height: 70vh;
+        padding: 1em;
     }
 
     .info {
         padding: 0;
         height: 70vh;
     }
+    .canvas {
+        background-size: 19em;
+        width: 20em;
+        height: 20em;
+    }
 
+    .tempo {
+        margin-top: 1em;
+        margin-bottom: 15em;
+    }
     .rodapé {
         padding: 1rem;
     }

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width" initial-scale="1.0" >
     <link rel="stylesheet" href="./css/style.css">
     <title>MyChessProject</title>
     <!--titulo da aba-->
@@ -62,14 +62,15 @@
                 <img src="./img/peças_brancas/White_Queen.png" class="pieces" id="whiteQueen">
                 <img src="./img/peças_brancas/white_Pone.png" class="pieces" id="whitePone">
             </div>
-
-            <canvas class="canvas" id="canvas"></canvas>
-            <div class="time">
-                <div>
-                    <p class="tempo" id="tempo1">05:00</p>
-                </div>
-                <div>
-                    <p class="tempo" id="tempo2">05:00</p>
+            <div class="divCanvas">
+                <canvas class="canvas" id="canvas"></canvas>
+                <div class="time">
+                    <div>
+                        <p class="tempo" id="tempo1">05:00</p>
+                    </div>
+                    <div>
+                        <p class="tempo" id="tempo2">05:00</p>
+                    </div>
                 </div>
             </div>
 
@@ -112,7 +113,7 @@
                 </div>
             </div>
         </div>
-        
+
     </footer>
     <!--rodapé-->
 
