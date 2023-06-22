@@ -392,33 +392,7 @@ footer a {
 
 
 /* Altura */
-@media (max-device-height:375px) {
-    header {
-        display: none;
-    }
-
-    footer {
-        display: none;
-    }
-
-    .info {
-        margin-top: 0;
-        height: 150vh;
-    }
-
-    .canvas {
-        background-size: 16em;
-        width: 17em;
-        height: 17em;
-    }
-
-    .tempo {
-        margin-top: 1em;
-        margin-bottom: 13em;
-    }
-}
-
-@media (min-device-height:376px) and (max-device-height:420px) {
+@media (max-device-height:420px) {
     header {
         display: none;
     }
