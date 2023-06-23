@@ -484,7 +484,7 @@ footer a {
 
 }
 
-@media (min-device-height: 570px) and (max-device-height: 630px) {
+@media (min-device-height: 570px) and (max-device-height: 673px) {
 
     .screen {
         height: 70vh;
