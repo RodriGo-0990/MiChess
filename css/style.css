@@ -255,10 +255,15 @@ footer a {
     border: 1rem solid #391f02f2;
 }
 
-.tempo {
+.tempo1 {
     margin-left: 0.5em;
-    margin-top: 2em;
-    margin-bottom: 15em;
+    margin-top: 0.5em;
+    margin-bottom: 17em;
+    color: #e6e673d3;
+}
+.tempo2{
+    margin-top: 0.5em;
+    margin-left: 0.5em;
     color: #e6e673d3;
 }
 
@@ -330,16 +335,11 @@ footer a {
     .info {
         margin-top: 60rem;
     }
-    .screen{
-        padding: 0;
-        padding-top:1em;
-        height: auto;
-    }
-
+    
     .center {
         flex-direction: column;
     }
-
+    
     .logo {
         padding-top: 9em;
         width: unset;
@@ -399,25 +399,92 @@ footer a {
     footer {
         display: none;
     }
-
     .info {
         margin-top: 0;
-        height: 150vh;
+        height: 110vh;
+        padding: 0;
     }
-
+    .screen{
+        padding: 0;
+    }
     .canvas {
+        margin-bottom: 1em;
         background-size: 15em;
         width: 16em;
         height: 16em;
     }
+    .options {
+        padding-top: 8rem;
+        padding-left: 0;
+    }
 
-    .tempo {
+    .tempo1 {
         margin-top: 1em;
-        margin-bottom: 11em;
+        margin-bottom: 12em;
     }
 }
+@media (max-device-height:512px){
+    .canvas {
+        margin-bottom: 1em;
+        background-size: 15em;
+        width: 16em;
+        height: 16em;
+    }
+    .tempo1 {
+        margin-top: 1em;
+        margin-bottom: 12em;
+    }
+    .options {
+        padding-top: 8rem;
+        padding-left: 0;
+    }
+    .screen{
+        padding: 0;
+    }
+    .info {
+        padding:0;
+    }
+    .rodapé {
+        padding: 1rem;
+    }
 
-@media (min-device-height: 421px) and (max-device-height: 630px) {
+    .logo {
+        padding-top: 1em;
+    }
+}
+@media (min-device-height: 512px) and (max-device-height: 570px){
+
+    .info{
+        padding: 0;
+    }
+    .screen {
+        padding:0;
+    }
+    .canvas {
+        background-size: 17em;
+        width: 18em;
+        height: 18em;
+    }
+
+    .tempo1 {
+        margin-top: 1em;
+        margin-bottom: 14em;
+    }
+    .options{
+        padding-top: 8rem;
+        padding-left: 0;
+    }
+    .rodapé {
+        padding: 1rem;
+    }
+
+    .logo {
+        padding-top: 1em;
+    }
+
+}
+
+@media (min-device-height: 570px) and (max-device-height: 630px) {
 
     .screen {
         height: 70vh;
@@ -434,10 +501,11 @@ footer a {
         height: 20em;
     }
 
-    .tempo {
+    .tempo1 {
         margin-top: 1em;
-        margin-bottom: 15em;
+        margin-bottom: 16em;
     }
+
     .rodapé {
         padding: 1rem;
     }
