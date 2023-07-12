@@ -121,7 +121,7 @@ a:hover {
     margin: 0 auto;
     margin-top: 5em;
     padding: 3rem;
-    width: 60vw;
+    width: 80%;
     height: 80vh;
     display: flex;
     font-size: 2rem;
@@ -139,22 +139,36 @@ a:hover {
 
 .texto {
     margin: 0 auto;
-    font-size: 2rem;
+    font-size: 20px;
     overflow-wrap: auto;
     overflow-y: scroll;
     width: 100%;
     height: 80%;
     text-align: left;
-    line-height: 2rem;
+    line-height: 3rem;
+    font-weight: bold;
+}
+.cliqueaqui{
+    color: antiquewhite;
+}
+.cliqueaqui:hover{
+    color: darkkhaki;
+    transition: 0.8s;
 }
 
 .texto::-webkit-scrollbar {
-    display: none;
-}
+    width: 5px;
+  } 
+.texto::-webkit-scrollbar-thumb {
+    background: #88888811; 
+  }
+.texto::-webkit-scrollbar-thumb:hover {
+    background: #cbcbcb43; 
+  }
 
 .card {
     padding: 2em;
-    width: 40%;
+    width: 30%;
     height: 85%;
     margin: 1em;
     border-top-left-radius: 1rem;
@@ -167,10 +181,14 @@ a:hover {
     transition: background-position 0.9s;
     box-shadow: 4rem 3rem 1rem -1rem #000000c8;
     animation: fadeIn 1.5s;
+    cursor: pointer;
 }
 
 .card:hover {
     background-position: left;
+}
+.card img {
+    width: 100%;
 }
 
 
