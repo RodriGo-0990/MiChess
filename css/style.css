@@ -358,13 +358,13 @@ footer a {
         background-size: 200rem;
     }
 }
-@media (max-device-width: 490px) {
+@media (max-device-width: 380px) {
     body {
         background-size: 300rem;
     }
 
     .infoCanvas {
-        margin-top: 25rem;
+        margin-top: 30rem;
     }
     
     .screen{
