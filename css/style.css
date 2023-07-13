@@ -129,6 +129,18 @@ a:hover {
     max-width: 200rem;
     color: white;
 }
+.infoCanvas {
+    margin: 0 auto;
+    margin-top: 5em;
+    padding: 3rem;
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    font-size: 2rem;
+    min-width: 100rem;
+    max-width: 200rem;
+    color: white;
+}
 
 
 /* Cards */
@@ -351,37 +363,41 @@ footer a {
         background-size: 300rem;
     }
 
-    .info {
-        margin-top: 40rem;
+    .infoCanvas {
+        margin-top: 25rem;
     }
     
     .screen{
         display: table;
         text-align: center;
     }
-
+    .info{
+        margin-top:70vh;
+    }
     .center {
         flex-direction: column;
     }
     .canvas{
     background-size: cover;
-    width: 43em;
-    height: 43em;
+    width: 40em;
+    height: 40em;
     padding: 1em;
     }
     
     .options{
         padding-left: 0;
-        padding-top: 2em;
+        padding-top: 1em;
         font-size: 35px;
     }
     .options p {
         font-size:40px;
+        margin-bottom: 10px;
     }
     .play{
         padding-left: 4em;
         padding-right: 4em;
         margin-left: 0;
+        margin-top: 10px;
     }
     .input{
         width: 30px;
@@ -457,7 +473,6 @@ footer a {
         display: none;
     }
     .info {
-        margin-top: 0;
         height: 110vh;
         padding: 0;
     }
