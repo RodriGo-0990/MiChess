@@ -65,24 +65,30 @@
             <div class="divCanvas">
                 <canvas class="canvas" id="canvas"></canvas>
                 <div class="time">
-                    <div class="tempo1" >
-                        <p  id="tempo1">05:00</p>
+                    <div class="tempo1">
+                        <p id="tempo1">05:00</p>
                     </div>
                     <div class="tempo2">
-                        <p  id="tempo2">05:00</p>
+                        <p id="tempo2">05:00</p>
                     </div>
                 </div>
             </div>
 
             <div class="options">
+                <div>
+                    <p id="vez"> escolha a cor das peças. </p>
+                </div>
+                
+                <div>
+                    <input class="input" type="radio" id="brancas" name="opcao" onclick="escolherCor(this.id)">
+                    <label>Brancas</label>
+                    <input class="input" type="radio" id="negras" name="opcao" onclick="escolherCor(this.id)">
+                    <label>Pretas</label>
+                </div>
 
-                <p id="vez"> escolha a cor das peças. </p>
-                <input class="input" type="radio" id="brancas" name="opcao" onclick="escolherCor(this.id)">
-                <label>Brancas</label>
-                <input class="input" type="radio" id="negras" name="opcao" onclick="escolherCor(this.id)">
-                <label>Pretas</label>
-
-                <input type="button" class="play" id="play" value="Jogar" onclick="play()">
+                <div>
+                    <input type="button" class="play" id="play" value="Jogar" onclick="play()">
+                </div>
             </div>
 
     </section>

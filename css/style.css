@@ -260,7 +260,7 @@ footer a {
 }
 
 .divCanvas {
-    width: 60%;
+    width: 50%;
     display: flex;
 }
 
@@ -274,19 +274,25 @@ footer a {
 }
 
 .tempo1 {
-    margin-left: 0.5em;
-    margin-top: 0.5em;
-    margin-bottom: 17em;
-    color: #e6e673d3;
-}
-.tempo2{
-    margin-top: 0.5em;
-    margin-left: 0.5em;
+    position: absolute;
+    top:0;
+    padding-left: 0.5em;
     color: #e6e673d3;
 }
 
+.tempo2{
+    position: absolute;
+    bottom: 0;
+    padding-left: 0.5em;
+    color: #e6e673d3;
+}
+
+.time {
+   position: relative;
+}
+
 .options {
-    display: inline;
+    display: inline-block;
     padding-top: 10rem;
     padding-left: 2em;
 }
@@ -339,25 +345,40 @@ footer a {
     body {
         background-size: auto;
     }
-
-    .info {
-        margin-top: 20rem;
-    }
 }
-
 @media (max-device-width: 490px) {
     body {
-        background-size: 200rem;
+        background-size: 300rem;
     }
 
     .info {
-        margin-top: 60rem;
+        margin-top: 40rem;
     }
-    
+
+    .screen{
+        display: table;
+        text-align: center;
+    }
+
     .center {
         flex-direction: column;
     }
+
+    .divCanvas{
+        width: 100%;
+    }
+
+    .canvas{
+    background-size: cover;
+    width: 60em;
+    height: 60em;
+    padding: 1.5em;
+    }
     
+    .options{
+        padding-top: 3em;
+    }
+
     .logo {
         padding-top: 9em;
         width: unset;
@@ -408,8 +429,7 @@ footer a {
     }
 }
 
-
-/* Altura */
+/* ALTURA */
 @media (max-device-height:420px) {
     header {
         display: none;
@@ -425,33 +445,13 @@ footer a {
     .screen{
         padding: 0;
     }
-    .canvas {
-        margin-bottom: 1em;
-        background-size: 15em;
-        width: 16em;
-        height: 16em;
-    }
     .options {
         padding-top: 8rem;
         padding-left: 0;
     }
-
-    .tempo1 {
-        margin-top: 1em;
-        margin-bottom: 12em;
-    }
 }
 @media (max-device-height:512px){
-    .canvas {
-        margin-bottom: 1em;
-        background-size: 15em;
-        width: 16em;
-        height: 16em;
-    }
-    .tempo1 {
-        margin-top: 1em;
-        margin-bottom: 12em;
-    }
+   
     .options {
         padding-top: 8rem;
         padding-left: 0;
@@ -483,11 +483,6 @@ footer a {
         width: 18em;
         height: 18em;
     }
-
-    .tempo1 {
-        margin-top: 1em;
-        margin-bottom: 14em;
-    }
     .options{
         padding-top: 8rem;
         padding-left: 0;
@@ -513,17 +508,6 @@ footer a {
         padding: 0;
         height: 70vh;
     }
-    .canvas {
-        background-size: 19em;
-        width: 20em;
-        height: 20em;
-    }
-
-    .tempo1 {
-        margin-top: 1em;
-        margin-bottom: 16em;
-    }
-
     .rodapé {
         padding: 1rem;
     }
@@ -531,5 +515,4 @@ footer a {
     .logo {
         padding-top: 1em;
     }
-
 }

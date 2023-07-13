@@ -67,6 +67,9 @@ audioPromoPawn.src = "./sounds/promocao.mp3"
 
 const audioXeque = new Audio();
 audioXeque.src = "./sounds/xeque.mp3"
+
+const audioMusic = new Audio();
+audioMusic.src = "./sounds/music.mp3"
 //--------------------------------------
 
 //-----turno, xeque, xequemate------------
@@ -280,6 +283,9 @@ function playTakePiece() {
 }
 function playXequeSound() {
     audioXeque.play();
+}
+function playMusic(){
+    audioMusic.play();
 }
 //--------------------
 
@@ -2123,7 +2129,7 @@ class blackPawn extends piece {
 
 //----botoes da pagina-----------
 function desabilitarPlay() {
-    document.querySelector("#play").disabled = true;
+    document.querySelector("#play").disabled = true; 
 }
 function habilitarPlay() {
     document.querySelector("#play").disabled = false;
@@ -2154,6 +2160,7 @@ function play() {
     document.getElementById("vez").innerHTML = "é a vez das brancas";
     turno = brancas;
     playClickSound();//som
+    playMusic();
 
     //hover
     canvas.addEventListener("mousemove", (event) => {
