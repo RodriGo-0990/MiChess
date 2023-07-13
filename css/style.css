@@ -343,10 +343,10 @@ footer a {
 /* Largura */
 @media (min-device-width:320px) and (max-device-width: 760px) {
     body {
-        background-size: auto;
+        background-size: 200rem;
     }
 }
-@media (max-device-width: 490px) {
+@media (max-device-width: 320px) {
     body {
         background-size: 300rem;
     }
@@ -354,7 +354,7 @@ footer a {
     .info {
         margin-top: 40rem;
     }
-
+    
     .screen{
         display: table;
         text-align: center;
@@ -363,25 +363,44 @@ footer a {
     .center {
         flex-direction: column;
     }
-
-    .divCanvas{
-        width: 100%;
-    }
-
     .canvas{
     background-size: cover;
-    width: 60em;
-    height: 60em;
-    padding: 1.5em;
+    width: 43em;
+    height: 43em;
+    padding: 1em;
     }
     
     .options{
-        padding-top: 3em;
+        padding-left: 0;
+        padding-top: 2em;
+        font-size: 35px;
+    }
+    .options p {
+        font-size:40px;
+    }
+    .play{
+        padding-left: 4em;
+        padding-right: 4em;
+        margin-left: 0;
+    }
+    .input{
+        width: 30px;
+        height: 30px;
+    }
+    .tempo1{
+        margin-top: 1em;
+    }
+    .tempo2{
+        margin-bottom: 1em;
     }
 
     .logo {
         padding-top: 9em;
         width: unset;
+    }
+    .time{
+        font-weight: bold;
+        font-size: 35px;
     }
 
     .menu {
@@ -476,7 +495,7 @@ footer a {
         padding: 0;
     }
     .screen {
-        padding:0;
+        padding:12em;
     }
     .canvas {
         background-size: 17em;
