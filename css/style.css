@@ -346,7 +346,7 @@ footer a {
         background-size: 200rem;
     }
 }
-@media (max-device-width: 320px) {
+@media (max-device-width: 490px) {
     body {
         background-size: 300rem;
     }
