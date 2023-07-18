@@ -301,6 +301,7 @@ footer a {
 
 .time {
    position: relative;
+   height: 400px;
 }
 
 .options {
@@ -362,11 +363,9 @@ footer a {
     body {
         background-size: 300rem;
     }
-
     .infoCanvas {
         margin-top: 30rem;
     }
-    
     .screen{
         display: table;
         text-align: center;
@@ -376,6 +375,8 @@ footer a {
     }
     .center {
         flex-direction: column;
+        margin: 0 auto;
+        width: 100%;
     }
     .canvas{
     background-size: cover;
@@ -409,7 +410,9 @@ footer a {
     .tempo2{
         margin-bottom: 1em;
     }
-
+    .time{
+        height: 800px;    
+    }
     .logo {
         padding-top: 9em;
         width: unset;
@@ -425,9 +428,9 @@ footer a {
     }
 
     .menu a {
-        font-size: 5em;
-        padding-left: 3rem;
-        padding-right: 3rem;
+        font-size: 4em;
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 
     .titulo {
@@ -500,7 +503,7 @@ footer a {
         padding-top: 1em;
     }
 }   
-@media (min-device-height: 513px){
+@media (min-device-height: 513px) and (max-device-height: 670px ){
 
     .screen {
         height: 70vh;
