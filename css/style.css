@@ -472,16 +472,12 @@ footer a {
     footer {
         display: none;
     }
-    .info {
-        height: 110vh;
-        padding: 0;
-    }
     .screen{
-        padding: 0;
+        padding: 1em;
+        height: 400px;
     }
-    .options {
-        padding-top: 8rem;
-        padding-left: 0;
+    .infoCanvas{
+        margin: 0;
     }
 }
 @media (max-device-height:512px){
@@ -503,35 +499,8 @@ footer a {
     .logo {
         padding-top: 1em;
     }
-}
-@media (min-device-height: 512px) and (max-device-height: 570px){
-
-    .info{
-        padding: 0;
-    }
-    .screen {
-        padding:12em;
-    }
-    .canvas {
-        background-size: 17em;
-        width: 18em;
-        height: 18em;
-    }
-    .options{
-        padding-top: 8rem;
-        padding-left: 0;
-    }
-    .rodapé {
-        padding: 1rem;
-    }
-
-    .logo {
-        padding-top: 1em;
-    }
-
-}
-
-@media (min-device-height: 570px) and (max-device-height: 673px) {
+}   
+@media (min-device-height: 513px){
 
     .screen {
         height: 70vh;
@@ -539,6 +508,10 @@ footer a {
     }
 
     .info {
+        padding: 0;
+        height: 70vh;
+    }
+    .infoCanvas{
         padding: 0;
         height: 70vh;
     }
