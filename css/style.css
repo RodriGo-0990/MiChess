@@ -50,8 +50,8 @@ html {
 body {
     width: 100%;
     height: 100%;
-    overflow-y: hidden;
-    overflow-x: hidden;
+    overflow-y: auto;
+    overflow-x: auto;
     background-color: rgb(40, 39, 39);
     background-image: url(../img/grunge-checkerboard-texture-background.jpg);
     background-repeat: repeat-y;
@@ -359,7 +359,7 @@ footer a {
         background-size: 200rem;
     }
 }
-@media (max-device-width: 420px) {
+@media (max-device-width: 350px) {
     body {
         background-size: 300rem;
     }
@@ -387,7 +387,7 @@ footer a {
     
     .options{
         padding-left: 0;
-        padding-top: 1em;
+        padding-top: 0.5em;
         font-size: 35px;
     }
     .options p {
@@ -459,13 +459,111 @@ footer a {
         height: 10em;
     }
 }
+@media (min-device-width: 351px ) and (max-device-width: 430px) {
+    body {
+        background-size: 300rem;
+    }
+    .infoCanvas {
+        margin-top: 30rem;
+    }
+    .screen{
+        display: table;
+        text-align: center;
+    }
+    .info{
+        margin-top:60vh;
+    }
+    .center {
+        flex-direction: column;
+        margin: 0 auto;
+        width: 100%;
+    }
+    .canvas{
+    background-size: cover;
+    width: 30em;
+    height: 30em;
+    padding: 0.8em;
+    margin-left: 20%;
+    }
+    
+    .options{
+        padding-left: 0;
+        padding-top: 2px;
+        font-size: 35px;
+    }
+    .options p {
+        font-size:40px;
+        margin-bottom: 10px;
+    }
+    .play{
+        padding-left: 4em;
+        padding-right: 4em;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .input{
+        width: 30px;
+        height: 30px;
+    }
+    .tempo1{
+        margin-top: 1em;
+    }
+    .tempo2{
+        margin-bottom: 1em;
+    }
+    .time{
+        height: 600px;    
+    }
+    .logo {
+        padding-top: 9em;
+        width: unset;
+    }
+    .time{
+        font-weight: bold;
+        font-size: 35px;
+    }
+    .menu {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+    .menu a {
+        font-size: 5em;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .titulo {
+        font-size: 11rem;
+        padding-top: inherit;
+        width: unset;
+    }
+    .rodapé {
+        flex-direction: column-reverse;
+    }
+    .email {
+        width: unset;
+        font-size: 4em;
+        text-align: center;
+        line-height: 1.3;
+    }
+    .email a img {
+        width: 3rem;
+        height: 3rem;
+    }
+    .divIcons {
+        width: unset;
+        justify-content: center;
+        padding: 1em;
+    }
+    .contatoIcon a img {
+        width: 10em;
+        height: 10em;
+    }
+}
 
 /* ALTURA */
 @media (max-device-height:420px) {
     header {
-        display: none;
-    }
-    footer {
         display: none;
     }
     .screen{
@@ -476,10 +574,9 @@ footer a {
         margin: 0;
     }
 }
-@media (max-device-height:512px){
+@media (max-device-height:532px){
    
     .options {
-        padding-top: 8rem;
         padding-left: 0;
     }
     .screen{
@@ -488,10 +585,9 @@ footer a {
     .info {
         padding:0;
     }
-    .rodapé {
-        padding: 1rem;
+    footer {
+        display:none;
     }
-
     .logo {
         padding-top: 1em;
     }
