@@ -461,16 +461,21 @@ function pontuacao(peace) {
         ponto = 900;
     }
     pontuar(ponto)
-    console.log(ponto)
 }
 function pontuar(ponto) {
     if (turno == brancas) {
-        placarBrancas = placarBrancas + ponto;
-        placarPretas = placarPretas - ponto;
+        placarBrancas = parseInt(placarBrancas + ponto);
+        placarPretas = parseInt(placarPretas - ponto);
+
+        console.log(placarPretas);
+        console.log(placarBrancas);
     }
     if (turno == pretas) {
-        placarPretas = placarPretas + ponto;
-        placarBrancas = placarBrancas - ponto;
+        placarPretas = parseInt(placarPretas + ponto);
+        placarBrancas = parseInt(placarBrancas - ponto);
+
+        console.log(placarPretas);
+        console.log(placarBrancas);
     }
     if (invertido) {
         placarBrancas = placarBrancas == 0 ? placar1.innerHTML = "" : placar1.innerHTML = placarBrancas;
