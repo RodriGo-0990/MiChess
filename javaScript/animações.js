@@ -1,7 +1,9 @@
 const canvas = document.querySelector("canvas");// tag canvas
 const context = canvas.getContext("2d"); // essa constante chama os metodos de desenho do canvas
 const display1 = document.querySelector("#tempo1");//relogio de cima
-const display2 = document.querySelector("#tempo2");//relogio de baixo    
+const display2 = document.querySelector("#tempo2");//relogio de baixo
+const placar1 = document.querySelector("#placar1");//placar 1
+const placar2 = document.querySelector("#placar2");//placar 2    
 const boardgame = new Array(64);// locais das casas do tabuleiro
 let coordenate_x = 0;//horizontal
 let coordenate_y = 0;//vertical
@@ -18,6 +20,8 @@ var segundosTempo2 = 59;
 var minutosTempo2 = 4;
 var tempo1;
 var tempo2;
+let placarBrancas = 0;
+let placarPretas = 0;
 //-------------------------------
 
 
@@ -207,12 +211,12 @@ function checkXeque() {//conferir se o lance está em xeque
     }
     //acha o rei e verifica se está em xeque
     for (int = 0; int < boardgame.length; int++) {
-        var vez = turno == brancas ? "brancas": "pretas"
+        var vez = turno == brancas ? "brancas" : "pretas"
         var Wking = new whiteKing(0, 0);
         var Bking = new blackKing(0, 0);
         boardgame[int].setInXeque(false);
         if (boardgame[int].getPiece() != null) {
-            
+
             if (Object.is(boardgame[int].getPiece().constructor, Bking.constructor)) {
 
                 if (boardgame[int].getPiece().getAtacked()) {
@@ -225,21 +229,21 @@ function checkXeque() {//conferir se o lance está em xeque
             if (Object.is(boardgame[int].getPiece().constructor, Wking.constructor)) {
 
                 if (boardgame[int].getPiece().getAtacked()) {
-                    document.getElementById("vez").innerHTML = "xeque! é a vez das "+ vez;
+                    document.getElementById("vez").innerHTML = "xeque! é a vez das " + vez;
                     boardgame[int].setInXeque(true);
                     isxeque = true;
                     playXequeSound();
                 }
             }
-            
+
         }
 
     }
     return isxeque;
 }
-function checkXequeMate(obj){//xeque-mate!!!
-    var Bking = new blackKing(0,0);
-    var Wking = new whiteKing(0,0);
+function checkXequeMate(obj) {//xeque-mate!!!
+    var Bking = new blackKing(0, 0);
+    var Wking = new whiteKing(0, 0);
 
     if (Object.is(obj.constructor, Wking.constructor)) {
         playWinSound()
@@ -284,7 +288,7 @@ function playTakePiece() {
 function playXequeSound() {
     audioXeque.play();
 }
-function playMusic(){
+function playMusic() {
     audioMusic.play();
 }
 //--------------------
@@ -406,6 +410,7 @@ function verificaAtaque(valor) {
         casaDestino = boardgame[valor];//para o caso de promoção do peão;
         boardgame[valor].clear(context);
         boardgame[valor].takeOffPiece();
+        pontuacao(pecaEliminada);
         boardgame[valor].placePiece(instanciarClasse(selectedPiece, boardgame[valor].x, boardgame[valor].y));
         checkXeque();
         valida = true;
@@ -427,6 +432,55 @@ function movement(value, thisTeam) {
             }
         }
     }
+}
+function pontuacao(peace) {
+    var ponto;
+    var obj = Object.prototype.constructor(peace);
+
+    if (Object.is(obj.constructor, new whitePawn(0, 0).constructor) || Object.is(obj.constructor, new blackPawn(0, 0).constructor)) {
+        ponto = 10;
+    }
+
+    if (Object.is(obj.constructor, new whiteKnight(0, 0).constructor) || Object.is(obj.constructor, new blackKnight(0, 0).constructor)) {
+        ponto = 30;
+    }
+
+    if (Object.is(obj.constructor, new whiteBishop(0, 0).constructor) || Object.is(obj.constructor, new blackBishop(0, 0).constructor)) {
+        ponto = 50;
+    }
+
+    if (Object.is(obj.constructor, new whiteCastle(0, 0).constructor) || Object.is(obj.constructor, new blackCastle(0, 0).constructor)) {
+        ponto = 100;
+    }
+
+    if (Object.is(obj.constructor, new whiteQueen(0, 0).constructor) || Object.is(obj.constructor, new blackQueen(0, 0).constructor)) {
+        ponto = 500;
+    }
+
+    if (Object.is(obj.constructor, new whiteKing(0, 0).constructor) || Object.is(obj.constructor, new blackKing(0, 0).constructor)) {
+        ponto = 900;
+    }
+    pontuar(ponto)
+    console.log(ponto)
+}
+function pontuar(ponto) {
+    if (turno == brancas) {
+        placarBrancas = placarBrancas + ponto;
+        placarPretas = placarPretas - ponto;
+    }
+    if (turno == pretas) {
+        placarPretas = placarPretas + ponto;
+        placarBrancas = placarBrancas - ponto;
+    }
+    if (invertido) {
+        placarBrancas = placarBrancas == 0 ? placar1.innerHTML = "" : placar1.innerHTML = placarBrancas;
+        placarPretas = placarPretas == 0 ? placar2.innerHTML = "" : placar2.innerHTML = placarPretas;
+    }
+    if (!invertido) {
+        placarBrancas = placarBrancas == 0 ? placar2.innerHTML = "" : placar2.innerHTML = placarBrancas;
+        placarPretas = placarPretas == 0 ? placar1.innerHTML = "" : placar1.innerHTML = placarPretas;
+    }
+
 }
 function pawnAttack(value, thisTeam) {
     //método para o ataque do peão, só ele ataca e se move de forma diferente.
@@ -614,7 +668,7 @@ function constRender(ctx, inv) {
             if (boardgame[i].getPiece().getAtacked()) {
                 boardgame[i].printFull(ctx, colorred);
             }
-           
+
 
         } else {
             boardgame[i].clear(ctx);
@@ -764,7 +818,7 @@ class casas {
         return this.casaRoqueMove;
     }
     getCasaInXeque() {
-       return this.casainXeque;
+        return this.casainXeque;
     }
 }
 class piece {
@@ -2129,7 +2183,7 @@ class blackPawn extends piece {
 
 //----botoes da pagina-----------
 function desabilitarPlay() {
-    document.querySelector("#play").disabled = true; 
+    document.querySelector("#play").disabled = true;
 }
 function habilitarPlay() {
     document.querySelector("#play").disabled = false;
@@ -2235,6 +2289,7 @@ function play() {
                         casaDestino = boardgame[i];  //guarda a casa que será colocada a peça;
                         casaAtual.clear(context); //apaga a imagem da peça na casa onde estava anteriormente.
                         casaAtual.takeOffPiece(); //set null no atributo PEÇA da CASA anterior.
+                        pontuacao(casaEnPassant.getPiece());//pontuação
                         casaEnPassant.clear(context); //apaga a imagem da peça
                         casaEnPassant.takeOffPiece(); //set null no atributo PEÇA da CASA.
                         casaDestino.placePiece(instanciarClasse(selectedPiece, boardgame[i].x, boardgame[i].y));// instancia a peça na casa selecionada.
