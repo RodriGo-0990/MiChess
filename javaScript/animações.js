@@ -13,6 +13,103 @@ const brancas = 1; //time brancas
 const pretas = 0; //time pretas
 let isxeque;
 
+
+//------variaveis IA--------//
+let IAisOn = false;
+let movimentosArray = new Array(10000)
+let pontosArray = new Array(100);
+let movimentoEncontrado;
+let placarIA;
+let timeIA;
+//-------------------------//
+
+
+
+
+//----movimentos IA-------//
+class Movimentos {
+
+    constructor(casaAtual_, casaDestino_, pieceIa, piecePlayer, pontos_) {
+        this.casaAtual = casaAtual_;
+        this.casaDestino = casaDestino_;
+        this.pieceia = pieceIa;
+        this.pieceplayer = piecePlayer;
+        this.pontos = pontos_;
+    }
+    mover() {
+        casaAtual = this.casaAtual;
+        casaDestino = this.casaDestino;
+        this.casaAtual.clear(context); //apaga a imagem da peça na casa onde estava anteriormente.
+        this.casaAtual.takeOffPiece(); //set null no atributo PEÇA da CASA anterior. 
+        this.casaDestino.placePiece(instanciarClasse(this.pieceia, this.casaDestino.x, this.casaDestino.y));
+    }
+
+}
+function selecionarMovimentoAleatorio(array) {
+    // Gera um índice aleatório entre 0 (inclusivo) e o tamanho do array (exclusivo)
+    const indiceAleatorio = Math.floor(Math.random() * array.length);
+
+    // Retorna o objeto correspondente ao índice aleatório
+    return array[indiceAleatorio];
+}
+
+function checkBestMoves() {
+    if (timeIA == turno && IAisOn) {
+        for (index = 0; index < boardgame.length; index++) {
+
+            if (boardgame[index].getPiece() != null &&
+                boardgame[index].getPiece().getTeam() == turno) {
+
+                boardgame[index].getPiece().move(index);
+
+                for (j = 0; j < boardgame.length; j++) {
+
+                    if (boardgame[j].getPiece() != null && boardgame[j].getPiece().getAtacked()) {
+
+                        movimentosArray.unshift(new Movimentos(boardgame[index], boardgame[j], boardgame[index].getPiece(), boardgame[j].getPiece(), boardgame[j].getPiece().getPontos()));
+                        pontosArray.push(boardgame[j].getPiece().getPontos());
+
+                    }
+                    if (boardgame[j].getSetted()) {
+                        movimentosArray.unshift(new Movimentos(boardgame[index], boardgame[j], boardgame[index].getPiece(), null, 0));
+                    }
+
+                }
+            }
+            reset();
+        }
+        movimentosArray.sort((a, b) => b.pontos - a.pontos);
+        movimentoEncontrado = movimentosArray[0];
+
+        if (movimentoEncontrado.pontos == 0) {
+            // IA MOVE PEÇA ALEATÒRIA
+            movimentoEncontrado = selecionarMovimentoAleatorio(movimentosArray);
+            if (movimentoEncontrado == undefined) {
+                movimentoEncontrado = movimentosArray[9];
+                movimentoEncontrado.mover()
+                playPiece()
+            } else {
+                movimentoEncontrado.mover();
+                playPiece();
+            }
+
+        } else {
+            //IA TOMA PEÇA
+            movimentoEncontrado.mover();
+            playTakePiece();
+        }
+        constRender(context, invertido);
+
+        movimentosArray = [];
+        pontosArray = [];
+    }
+}
+//-------------------------//
+
+
+
+
+
 //-----variáveis de tempo--------
 var segundosTempo1 = 59;
 var minutosTempo1 = 4;
@@ -388,7 +485,6 @@ function instanciarClasse(params, x, y) {
     if (Object.is(obj.constructor, BQueen.constructor)) {
         return BQueen;
     }
-
 }
 function instanciarTorre(x, y) {
     var obj = Object.prototype.constructor(torreDoRoque);
@@ -412,6 +508,10 @@ function verificaAtaque(valor) {
         boardgame[valor].takeOffPiece();
         pontuacao(pecaEliminada);
         boardgame[valor].placePiece(instanciarClasse(selectedPiece, boardgame[valor].x, boardgame[valor].y));
+        setTimeout(() => {
+            checkBestMoves();
+
+        }, 3000)
         checkXeque();
         valida = true;
         reset();
@@ -870,6 +970,9 @@ class whiteCastle extends piece {
     setAtacado(set) {
         this.atacked = set;
     }
+    getPontos() {
+        return 100;
+    }
     getSelect() {
         return this.select;
     }
@@ -952,6 +1055,9 @@ class whiteKing extends piece {
 
     setAtacado(set) {
         this.atacked = set;
+    }
+    getPontos() {
+        return 900;
     }
     getSelect() {
         return this.select;
@@ -1038,6 +1144,9 @@ class whiteBishop extends piece {
     }
     setAtacado(set) {
         this.atacked = set;
+    }
+    getPontos() {
+        return 50;
     }
     getSelect() {
         return this.select;
@@ -1192,6 +1301,9 @@ class whiteKnight extends piece {
     setAtacado(set) {
         this.atacked = set;
     }
+    getPontos() {
+        return 30;
+    }
     getSelect() {
         return this.select;
     }
@@ -1251,11 +1363,13 @@ class whiteQueen extends piece {
         this.y = y;
         this.select = false;
         this.atacked = false;
-
     }
 
     setAtacado(set) {
         this.atacked = set;
+    }
+    getPontos() {
+        return 500;
     }
     getSelect() {
         return this.select;
@@ -1468,6 +1582,9 @@ class whitePawn extends piece {
     setAtacado(set) {
         this.atacked = set;
     }
+    getPontos() {
+        return 10;
+    }
     setDoubleStep(value) {
         this.doubleStep = value;
     }
@@ -1535,6 +1652,9 @@ class blackCastle extends piece {
     }
     getSelect() {
         return this.select;
+    }
+    getPontos() {
+        return 100;
     }
     getAtacked() {
         return this.atacked;
@@ -1619,6 +1739,9 @@ class blackKing extends piece {
     getSelect() {
         return this.select;
     }
+    getPontos() {
+        return 900;
+    }
     getAtacked() {
         return this.atacked;
     }
@@ -1702,6 +1825,9 @@ class blackBishop extends piece {
 
     setAtacado(set) {
         this.atacked = set;
+    }
+    getPontos() {
+        return 50;
     }
     getSelect() {
         return this.select;
@@ -1856,6 +1982,9 @@ class blackKnight extends piece {
     setAtacado(set) {
         this.atacked = set;
     }
+    getPontos() {
+        return 30;
+    }
     getSelect() {
         return this.select;
     }
@@ -1920,6 +2049,9 @@ class blackQueen extends piece {
 
     setAtacado(set) {
         this.atacked = set;
+    }
+    getPontos() {
+        return 500;
     }
     getSelect() {
         return this.select;
@@ -2127,13 +2259,15 @@ class blackPawn extends piece {
         this.atacked = false;
         this.firstmove = true;
         this.doubleStep = false;
-
     }
     setAtacado(set) {
         this.atacked = set;
     }
     setDoubleStep(value) {
         this.doubleStep = value;
+    }
+    getPontos() {
+        return 10;
     }
     getSelect() {
         return this.select;
@@ -2197,6 +2331,7 @@ function escolherCor(valor) {
     if (valor == "brancas") {
         canvas.style.rotate = "0deg";
         invertido = false;
+        timeIA = pretas;
         render(context, invertido);
         habilitarPlay();
         playButtonSound();//som
@@ -2204,6 +2339,7 @@ function escolherCor(valor) {
     } if (valor == "negras") {
         canvas.style.rotate = "180deg";
         invertido = true;
+        timeIA = brancas;
         render(context, invertido)
         habilitarPlay();
         playButtonSound();//som
@@ -2218,8 +2354,15 @@ function play() {
     document.querySelector("#negras").disabled = true;
     document.getElementById("vez").innerHTML = "é a vez das brancas";
     turno = brancas;
+    IAisOn = true;
     playClickSound();//som
     playMusic();
+
+
+    setTimeout(() => {
+        checkBestMoves();
+
+    }, 3000)
 
     //hover
     canvas.addEventListener("mousemove", (event) => {
@@ -2258,102 +2401,119 @@ function play() {
             x = -(event.clientX - rect.right) * canvas.width / rect.width;
             y = -(event.clientY - rect.bottom) * canvas.height / rect.height;
         }
+        if (turno != timeIA) {
+            for (i = 0; i < boardgame.length; i++) {
 
-        for (i = 0; i < boardgame.length; i++) {
+                if (boardgame[i].calcDistance(x, y)) {
 
-            if (boardgame[i].calcDistance(x, y)) {
-
-                //*****se a casa selecionada estiver preenchida, será guardada a peça e a casa atual 
-                if (boardgame[i].isFilled()) {
-                    if (!verificaAtaque(i)) {// verifica se o movimento é um ataque. se não for, segue o fluxo.
-                        reset();
-                        selectedPiece = boardgame[i].getPiece(); //guarda a peça selecionada
-                        casaAtual = boardgame[i]; //guarda a casa da peça selecionada;
-                        casaAtualY = boardgame[i].y; //guarda a coordenada da peça selecionada
-                        if (verificarTurno()) {
-                            selectedPiece.move(i); //chama a função de movimentação da peça;
-                        }
-                    }
-
-                    //*****se a casa não tiver peça e estiver setada(verde), a peça guardada será colocada na casa clicada 
-                } else {
-                    if (boardgame[i].getSetted()) {
-                        reset();
-                        casaDestino = boardgame[i];  //guarda a casa que será colocada a peça;
-                        casaDestinoY = boardgame[i].y; //guarda a coordenada da casa em que será colocada a peça
-                        casaAtual.clear(context); //apaga a imagem da peça na casa onde estava anteriormente.
-                        casaAtual.takeOffPiece(); //set null no atributo PEÇA da CASA anterior. 
-                        casaDestino.placePiece(instanciarClasse(selectedPiece, boardgame[i].x, boardgame[i].y));// instancia a peça na casa selecionada.
-                        checkXeque();
-                        playPiece();//som
-
-                    }
-                    //********regra do Enpassant  
-                    if (boardgame[i].getEnpassant()) {
-                        reset();
-                        casaDestino = boardgame[i];  //guarda a casa que será colocada a peça;
-                        casaAtual.clear(context); //apaga a imagem da peça na casa onde estava anteriormente.
-                        casaAtual.takeOffPiece(); //set null no atributo PEÇA da CASA anterior.
-                        pontuacao(casaEnPassant.getPiece());//pontuação
-                        casaEnPassant.clear(context); //apaga a imagem da peça
-                        casaEnPassant.takeOffPiece(); //set null no atributo PEÇA da CASA.
-                        casaDestino.placePiece(instanciarClasse(selectedPiece, boardgame[i].x, boardgame[i].y));// instancia a peça na casa selecionada.
-                        checkXeque();
-                        playTakePiece();
-
-                    }
-                    //********regra do Roque
-                    if (boardgame[i].getRoqueMove()) {
-
-                        //==================ROQUE DO LADO DO REI=====================
-
-                        if (boardgame[i].x > casaAtual.x) {
+                    //*****se a casa selecionada estiver preenchida, será guardada a peça e a casa atual 
+                    if (boardgame[i].isFilled()) {
+                        if (!verificaAtaque(i)) {// verifica se o movimento é um ataque. se não for, segue o fluxo.
                             reset();
+                            selectedPiece = boardgame[i].getPiece(); //guarda a peça selecionada
+                            casaAtual = boardgame[i]; //guarda a casa da peça selecionada;
+                            casaAtualY = boardgame[i].y; //guarda a coordenada da peça selecionada
+                            if (verificarTurno()) {
+                                selectedPiece.move(i); //chama a função de movimentação da peça;
+                            }
+                        }
+
+                        //*****se a casa não tiver peça e estiver setada(verde), a peça guardada será colocada na casa clicada 
+                    } else {
+                        if (boardgame[i].getSetted()) {
+                            reset();
+                            casaDestino = boardgame[i];  //guarda a casa que será colocada a peça;
+                            casaDestinoY = boardgame[i].y; //guarda a coordenada da casa em que será colocada a peça
+                            casaAtual.clear(context); //apaga a imagem da peça na casa onde estava anteriormente.
+                            casaAtual.takeOffPiece(); //set null no atributo PEÇA da CASA anterior. 
+                            casaDestino.placePiece(instanciarClasse(selectedPiece, boardgame[i].x, boardgame[i].y));// instancia a peça na casa selecionada.
+                            setTimeout(() => {
+                                checkBestMoves();
+
+                            }, 3000)
+                            checkXeque();
+                            playPiece();//som
+
+                        }
+                        //********regra do Enpassant  
+                        if (boardgame[i].getEnpassant()) {
+                            reset();
+                            casaDestino = boardgame[i];  //guarda a casa que será colocada a peça;
                             casaAtual.clear(context); //apaga a imagem da peça na casa onde estava anteriormente.
                             casaAtual.takeOffPiece(); //set null no atributo PEÇA da CASA anterior.
-                            casaRoqueRei.clear(context);//apaga a torre da casa
-                            casaRoqueRei.takeOffPiece();//set null no atributo PEÇA da CASA.
+                            pontuacao(casaEnPassant.getPiece());//pontuação
+                            casaEnPassant.clear(context); //apaga a imagem da peça
+                            casaEnPassant.takeOffPiece(); //set null no atributo PEÇA da CASA.
+                            casaDestino.placePiece(instanciarClasse(selectedPiece, boardgame[i].x, boardgame[i].y));// instancia a peça na casa selecionada.
+                            setTimeout(() => {
+                                checkBestMoves();
 
-                            // instancia a peça na casa selecionada.
-                            boardgame[i].placePiece(instanciarClasse(selectedPiece, boardgame[i].x, boardgame[i].y));
-                            //instancia a torre na nova casa, usa função única *para não quebrar o sistema de turno
-                            boardgame[i - 1].placePiece(instanciarTorre(boardgame[i - 1].x, boardgame[i - 1].y));
-                            playTakePiece();//som
+                            }, 3000)
                             checkXeque();
-                            reset();
+                            playTakePiece();
+
+                        }
+                        //********regra do Roque
+                        if (boardgame[i].getRoqueMove()) {
+
+                            //==================ROQUE DO LADO DO REI=====================
+
+                            if (boardgame[i].x > casaAtual.x) {
+                                reset();
+                                casaAtual.clear(context); //apaga a imagem da peça na casa onde estava anteriormente.
+                                casaAtual.takeOffPiece(); //set null no atributo PEÇA da CASA anterior.
+                                casaRoqueRei.clear(context);//apaga a torre da casa
+                                casaRoqueRei.takeOffPiece();//set null no atributo PEÇA da CASA.
+
+                                // instancia a peça na casa selecionada.
+                                boardgame[i].placePiece(instanciarClasse(selectedPiece, boardgame[i].x, boardgame[i].y));
+                                //instancia a torre na nova casa, usa função única *para não quebrar o sistema de turno
+                                boardgame[i - 1].placePiece(instanciarTorre(boardgame[i - 1].x, boardgame[i - 1].y));
+                                setTimeout(() => {
+                                    checkBestMoves();
+
+                                }, 3000)
+                                playTakePiece();//som
+                                checkXeque();
+                                reset();
+                            }
+
+                            //==================ROQUE DO LADO DA DAMA=====================
+
+                            if (boardgame[i].x < casaAtual.x) {
+                                reset();
+                                casaAtual.clear(context); //apaga a imagem da peça na casa onde estava anteriormente.
+                                casaAtual.takeOffPiece(); //set null no atributo PEÇA da CASA anterior.
+                                casaRoqueDama.clear(context);//apaga a torre da casa
+                                casaRoqueDama.takeOffPiece();//set null no atributo PEÇA da CASA.
+
+                                // instancia a peça na casa selecionada.
+                                boardgame[i].placePiece(instanciarClasse(selectedPiece, boardgame[i].x, boardgame[i].y));
+                                //instancia a torre na nova casa, usa função única *para não quebrar o sistema de turno
+                                boardgame[i + 1].placePiece(instanciarTorre(boardgame[i + 1].x, boardgame[i + 1].y));
+                                setTimeout(() => {
+                                    checkBestMoves();
+
+                                }, 3000)
+
+                                playTakePiece();//som
+                                checkXeque();
+                                reset();
+                            }
+
+                        }
+                        else {
+                            //*****se a casa não esta ocupada nem setada(verde), só apaga as cores do tabuleiro
+                            reset()
                         }
 
-                        //==================ROQUE DO LADO DA DAMA=====================
-
-                        if (boardgame[i].x < casaAtual.x) {
-                            reset();
-                            casaAtual.clear(context); //apaga a imagem da peça na casa onde estava anteriormente.
-                            casaAtual.takeOffPiece(); //set null no atributo PEÇA da CASA anterior.
-                            casaRoqueDama.clear(context);//apaga a torre da casa
-                            casaRoqueDama.takeOffPiece();//set null no atributo PEÇA da CASA.
-
-                            // instancia a peça na casa selecionada.
-                            boardgame[i].placePiece(instanciarClasse(selectedPiece, boardgame[i].x, boardgame[i].y));
-                            //instancia a torre na nova casa, usa função única *para não quebrar o sistema de turno
-                            boardgame[i + 1].placePiece(instanciarTorre(boardgame[i + 1].x, boardgame[i + 1].y));
-                            playTakePiece();//som
-                            checkXeque();
-                            reset();
-                        }
-
-                    }
-                    else {
-                        //*****se a casa não esta ocupada nem setada(verde), só apaga as cores do tabuleiro
-                        reset()
                     }
 
                 }
-
             }
+
+            constRender(context, invertido);
         }
-
-        constRender(context, invertido);
-
-    })
+        })
 }
 //-------------------------------
