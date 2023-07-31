@@ -115,6 +115,16 @@ a:hover {
     transition: 0.8s;
 }
 
+.volumeButton{
+    background-image:url(../img/volume.png);
+    background-repeat:no-repeat;
+    width: 25px;
+    position:absolute;
+    right: 0;
+    top: 0;
+    border-radius: 5px;
+}
+
 
 /* conteúdo geral */
 .info {
@@ -329,7 +339,6 @@ footer a {
 }
 
 .play {
-    display: block;
     font-family: "fontface";
     font-weight: bolder;
     font-size: 1.3em;

@@ -3,7 +3,7 @@ const context = canvas.getContext("2d"); // essa constante chama os metodos de d
 const display1 = document.querySelector("#tempo1");//relogio de cima
 const display2 = document.querySelector("#tempo2");//relogio de baixo
 const placar1 = document.querySelector("#placar1");//placar 1
-const placar2 = document.querySelector("#placar2");//placar 2    
+const placar2 = document.querySelector("#placar2");//placar 2 
 const boardgame = new Array(64);// locais das casas do tabuleiro
 let coordenate_x = 0;//horizontal
 let coordenate_y = 0;//vertical
@@ -387,6 +387,16 @@ function playXequeSound() {
 }
 function playMusic() {
     audioMusic.play();
+}
+function stopMusic(){
+    if(audioMusic.paused){
+        audioMusic.play();
+        document.querySelector("#volume").style.backgroundImage = "url(../img/volume.png)";
+
+    }else{
+        audioMusic.pause();
+        document.querySelector("#volume").style.backgroundImage = "url(../img/mudo.png)";
+    }
 }
 //--------------------
 
@@ -2323,6 +2333,7 @@ class blackPawn extends piece {
 //----botoes da pagina-----------
 function desabilitarPlay() {
     document.querySelector("#play").disabled = true;
+    document.querySelector("#volume").disabled = true;   
 }
 function habilitarPlay() {
     document.querySelector("#play").disabled = false;
@@ -2353,10 +2364,12 @@ function play() {
     document.querySelector("#brancas").disabled = true;
     document.querySelector("#negras").disabled = true;
     document.getElementById("vez").innerHTML = "é a vez das brancas";
+    document.querySelector("#volume").disabled = false;
     turno = brancas;
     IAisOn = true;
     playClickSound();//som
     playMusic();
+
 
 
     setTimeout(() => {
