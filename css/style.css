@@ -118,6 +118,8 @@ a:hover {
 .volumeButton{
     background-image:url(../img/volume.png);
     background-repeat:no-repeat;
+    background-size:18px;
+    background-position:center;
     width: 25px;
     position:absolute;
     right: 0;
@@ -395,7 +397,11 @@ footer a {
     padding: 1em;
     margin-left: 5%;
     }
-    
+    .volumeButton{
+        width: 50px;
+        height: 30px;
+        background-size:25px;
+    }
     .options{
         padding-left: 0;
         padding-top: 0.1em;
