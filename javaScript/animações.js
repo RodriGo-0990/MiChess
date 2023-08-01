@@ -391,11 +391,11 @@ function playMusic() {
 function stopMusic(){
     if(audioMusic.paused){
         audioMusic.play();
-        document.querySelector("#volume").style.backgroundImage = "url(../img/volume.png)";
+        document.querySelector("#volume").style.backgroundImage = "url(./img/volume.png)";
 
     }else{
         audioMusic.pause();
-        document.querySelector("#volume").style.backgroundImage = "url(../img/mudo.png)";
+        document.querySelector("#volume").style.backgroundImage = "url(./img/mudo.png)";
     }
 }
 //--------------------
