@@ -389,12 +389,24 @@ function playMusic() {
     audioMusic.play();
 }
 function stopMusic(){
-    if(audioMusic.paused){
-        audioMusic.play();
+    if(audioMusic.muted){
+        audioXeque.muted = false;
+        audioButtonPlay.muted = false;
+        audioClockPlay.muted = false;
+        audioWinPlay.muted = false;
+        audioPromoPawn.muted = false;
+        audioPiece.muted = false;
+        audioMusic.muted = false;
         document.querySelector("#volume").style.backgroundImage = "url(./img/volume.png)";
 
     }else{
-        audioMusic.pause();
+        audioXeque.muted = true;
+        audioButtonPlay.muted = true;
+        audioClockPlay.muted = true;
+        audioWinPlay.muted = true;
+        audioPromoPawn.muted = true;
+        audioPiece.muted = true;
+        audioMusic.muted =true;
         document.querySelector("#volume").style.backgroundImage = "url(./img/mudo.png)";
     }
 }
