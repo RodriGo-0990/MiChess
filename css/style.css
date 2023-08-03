@@ -335,11 +335,15 @@ footer a {
     font-weight: bold;
     font-size: 1.3em;
     font-family: "fontface";
-    padding: 1rem 1rem 1rem;
+    padding: 1rem 1rem 0rem 0rem;
 }
 
 .input {
     cursor: pointer;
+}
+
+.div-button{
+    text-align: center;
 }
 
 .play {
@@ -354,8 +358,7 @@ footer a {
     transition: background-position 0.9s;
     border-radius: 1rem;
     box-shadow: 2rem 1.5rem 0.1em -0.2rem #00000066;
-    margin-top: 1em;
-    margin-left: 5rem;
+    margin-top: 2rem;
     padding: 1rem 4rem 1rem 4rem;
     cursor: pointer;
 }
