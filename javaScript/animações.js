@@ -2395,6 +2395,10 @@ function play() {
 
     if (isChecked.checked) {
         IAisOn = true;
+        setTimeout(() => {
+            checkBestMoves();
+
+        }, 3000)
     }
     else {
         IAisOn = false;
@@ -2439,11 +2443,6 @@ function play() {
             y = -(event.clientY - rect.bottom) * canvas.height / rect.height;
         }
         if (IAisOn) {
-            setTimeout(() => {
-                checkBestMoves();
-
-            }, 3000)
-
             if (turno != timeIA) {
                 for (i = 0; i < boardgame.length; i++) {
 
