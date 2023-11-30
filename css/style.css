@@ -213,8 +213,37 @@ a:hover {
 .card:hover {
     background-position: left;
 }
-.card img {
+.img-projeto{
+    text-align: center;
+}
+
+.skill-icons{
+    padding-top:1em ;
+    overflow-y: scroll;
     width: 100%;
+    height: 80%;
+    text-align: center;
+}
+.skill-icons::-webkit-scrollbar {
+    width: 5px;
+  } 
+.skill-icons::-webkit-scrollbar-thumb {
+    background: #88888811; 
+  }
+.skill-icons::-webkit-scrollbar-thumb:hover {
+    background: #cbcbcb43; 
+  }
+.skill-icons img {
+    padding: 7px;
+    width: 30%;
+    filter: grayscale(80%);
+    opacity: 0.8;
+}
+.skill-icons img:hover{
+    transform: scale(1.2);
+    filter: grayscale(0%);
+    opacity: 1;
+    transition: 0.5s;
 }
 
 
