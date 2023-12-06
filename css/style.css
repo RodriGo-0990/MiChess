@@ -115,13 +115,13 @@ a:hover {
     transition: 0.8s;
 }
 
-.volumeButton{
-    background-image:url(../img/volume.png);
-    background-repeat:no-repeat;
-    background-size:18px;
-    background-position:center;
+.volumeButton {
+    background-image: url(../img/volume.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: center;
     width: 25px;
-    position:absolute;
+    position: absolute;
     right: 10px;
     top: 10px;
     border-radius: 5px;
@@ -143,6 +143,7 @@ a:hover {
     max-width: 200rem;
     color: white;
 }
+
 .infoCanvas {
     margin: 0 auto;
     margin-top: 5em;
@@ -161,6 +162,7 @@ a:hover {
 .card h2 {
     padding-bottom: 1rem;
     text-align: center;
+
 }
 
 .texto {
@@ -174,23 +176,40 @@ a:hover {
     line-height: 3rem;
     font-weight: bold;
 }
-.cliqueaqui{
+
+.cliqueaqui {
     color: antiquewhite;
 }
-.cliqueaqui:hover{
+
+.cliqueaqui:hover {
     color: darkkhaki;
     transition: 0.8s;
 }
 
 .texto::-webkit-scrollbar {
     width: 5px;
-  } 
+}
+
 .texto::-webkit-scrollbar-thumb {
-    background: #88888811; 
-  }
+    background: #88888811;
+}
+
 .texto::-webkit-scrollbar-thumb:hover {
-    background: #cbcbcb43; 
-  }
+    background: #cbcbcb43;
+}
+
+
+.texto-projeto::-webkit-scrollbar {
+    width: 5px;
+}
+
+.texto-projeto::-webkit-scrollbar-thumb {
+    background: #88888811;
+}
+
+.texto-projeto::-webkit-scrollbar-thumb:hover {
+    background: #cbcbcb43;
+}
 
 .card {
     padding: 2em;
@@ -213,33 +232,60 @@ a:hover {
 .card:hover {
     background-position: left;
 }
-.img-projeto{
+
+.img-projeto {
+    text-align: center;
+    height: auto;
+}
+
+.img-projeto :hover {
+    transform: scale(1.9);
+    opacity: 1;
+    transition: 2s;
+}
+
+.img-projeto img {
+    width: 100%;
+    opacity: 0.8;
+}
+
+.texto-projeto {
+    height: 40%;
+    overflow-y: scroll;
+}
+
+.texto-projeto p {
     text-align: center;
 }
 
-.skill-icons{
-    padding-top:1em ;
+.skill-icons {
+    padding-top: 1em;
     overflow-y: scroll;
     width: 100%;
     height: 80%;
     text-align: center;
 }
+
 .skill-icons::-webkit-scrollbar {
     width: 5px;
-  } 
+}
+
 .skill-icons::-webkit-scrollbar-thumb {
-    background: #88888811; 
-  }
+    background: #88888811;
+}
+
 .skill-icons::-webkit-scrollbar-thumb:hover {
-    background: #cbcbcb43; 
-  }
+    background: #cbcbcb43;
+}
+
 .skill-icons img {
     padding: 7px;
     width: 30%;
     filter: grayscale(80%);
     opacity: 0.8;
 }
-.skill-icons img:hover{
+
+.skill-icons img :link:hover {
     transform: scale(1.2);
     filter: grayscale(0%);
     opacity: 1;
@@ -261,7 +307,7 @@ footer {
     margin: 0 auto;
     display: flex;
     width: 70%;
-    padding: 3rem;
+    padding: 1em;
     max-width: 90em;
     min-width: 80em;
 }
@@ -330,12 +376,12 @@ footer a {
 
 .tempo1 {
     position: absolute;
-    top:0;
+    top: 0;
     padding-left: 0.5em;
     color: #e6e673d3;
 }
 
-.tempo2{
+.tempo2 {
     position: absolute;
     bottom: 0;
     padding-left: 0.5em;
@@ -343,8 +389,8 @@ footer a {
 }
 
 .time {
-   position: relative;
-   height: 400px;
+    position: relative;
+    height: 400px;
 }
 
 .options {
@@ -371,7 +417,7 @@ footer a {
     cursor: pointer;
 }
 
-.div-button{
+.div-button {
     text-align: center;
 }
 
@@ -409,56 +455,68 @@ footer a {
     body {
         background-size: 300rem;
     }
+
     .infoCanvas {
         margin-top: 50vh;
     }
-    .screen{
+
+    .screen {
         display: table;
         text-align: center;
     }
-    .info{
-        margin-top:60vh;
+
+    .info {
+        margin-top: 60vh;
     }
+
     .center {
         flex-direction: column;
         margin: 0 auto;
         width: 100%;
     }
-    .canvas{
-    background-size: cover;
-    width: 37em;
-    height: 37em;
-    padding: 1em;
-    margin-left: 5%;
+
+    .canvas {
+        background-size: cover;
+        width: 37em;
+        height: 37em;
+        padding: 1em;
+        margin-left: 5%;
     }
-    .volumeButton{
+
+    .volumeButton {
         width: 60px;
         height: 50px;
-        background-size:25px;
+        background-size: 25px;
     }
-    .options{
+
+    .options {
         padding-left: 0;
         padding-top: 0.1em;
         font-size: 35px;
     }
+
     .options p {
-        font-size:40px;
+        font-size: 40px;
         margin-bottom: 10px;
     }
-    .play{
+
+    .play {
         padding-left: 4em;
         padding-right: 4em;
         margin-left: 0;
         margin-top: 10px;
     }
-    .input{
+
+    .input {
         width: 30px;
         height: 30px;
     }
-    .tempo1{
+
+    .tempo1 {
         margin-top: 1em;
     }
-    .tempo2{
+
+    .tempo2 {
         margin-bottom: 1em;
     }
 
@@ -466,27 +524,31 @@ footer a {
         padding-top: 9em;
         width: unset;
     }
-    .time{
+
+    .time {
         font-weight: bold;
         font-size: 35px;
         height: 730px;
     }
+
     .menu {
         width: 100%;
         text-align: center;
         padding: 0;
     }
+
     .menu a {
         font-size: 5em;
         padding-left: 2rem;
         padding-right: 2rem;
     }
+
     .titulo {
         font-size: 11rem;
         padding-top: inherit;
         width: unset;
     }
- 
+
     .email {
         width: unset;
         font-size: 30px;
@@ -494,15 +556,18 @@ footer a {
         line-height: 1.3;
         margin-top: 1rem;
     }
+
     .email a img {
         width: 2rem;
         height: 2rem;
     }
+
     .divIcons {
         width: unset;
         justify-content: center;
         padding: 1em;
     }
+
     .contatoIcon a img {
         width: 8em;
         height: 8em;
@@ -514,33 +579,41 @@ footer a {
     header {
         display: none;
     }
-    .screen{
+
+    .screen {
         padding: 1em;
         height: 400px;
     }
-    .infoCanvas{
+
+    .infoCanvas {
         margin: 0;
     }
 }
-@media (max-device-height:532px){
-   
+
+@media (max-device-height:532px) {
+
     .options {
         padding-left: 0;
     }
-    .screen{
+
+    .screen {
         padding: 0;
     }
+
     .info {
-        padding:0;
+        padding: 0;
     }
+
     footer {
-        display:none;
+        display: none;
     }
+
     .logo {
         padding-top: 1em;
     }
-}   
-@media (min-device-height: 513px) and (max-device-height: 670px ){
+}
+
+@media (min-device-height: 513px) and (max-device-height: 670px) {
 
     .screen {
         height: 70vh;
@@ -551,10 +624,12 @@ footer a {
         padding: 0;
         height: 70vh;
     }
-    .infoCanvas{
+
+    .infoCanvas {
         padding: 0;
         height: 70vh;
     }
+
     .rodapé {
         padding: 1rem;
     }
