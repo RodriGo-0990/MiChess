@@ -285,7 +285,7 @@ a:hover {
     opacity: 0.8;
 }
 
-.skill-icons img :link:hover {
+.skill-icons img:hover {
     transform: scale(1.2);
     filter: grayscale(0%);
     opacity: 1;
