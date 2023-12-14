@@ -134,7 +134,7 @@ a:hover {
 .info {
     margin: 0 auto;
     margin-top: 5em;
-    padding: 3rem;
+    padding: 2rem;
     width: 80%;
     height: 80vh;
     display: flex;
@@ -147,7 +147,7 @@ a:hover {
 .infoCanvas {
     margin: 0 auto;
     margin-top: 5em;
-    padding: 3rem;
+    padding: 2rem;
     width: 80%;
     height: 80vh;
     display: flex;
@@ -235,7 +235,6 @@ a:hover {
 
 .img-projeto {
     text-align: center;
-    height: auto;
 }
 
 .img-projeto :hover {
@@ -245,22 +244,23 @@ a:hover {
 }
 
 .img-projeto img {
-    width: 100%;
+    width: 80%;
     opacity: 0.8;
 }
 
 .texto-projeto {
-    height: 40%;
+    height: 60%;
     overflow-y: scroll;
 }
 
 .texto-projeto p {
-    text-align: center;
+    font-size: 16px ;
 }
 
 .skill-icons {
     padding-top: 1em;
     overflow-y: scroll;
+    overflow-x: hidden;
     width: 100%;
     height: 80%;
     text-align: center;
@@ -368,9 +368,9 @@ footer a {
 .canvas {
     background-image: url(../img/board1.jpg);
     background-size: cover;
-    padding: 0.5em;
-    width: 21em;
-    height: 21em;
+    padding: 0.4em;
+    width: 16em;
+    height: 16em;
     border: 1rem solid #391f02f2;
 }
 
@@ -390,7 +390,7 @@ footer a {
 
 .time {
     position: relative;
-    height: 400px;
+    height: 300px;
 }
 
 .options {
