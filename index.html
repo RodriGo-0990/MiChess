@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>MyChessProject</title>
     <!--titulo da aba-->
-    
+
     <!--imagem favicon-->
     <link rel="icon" href="./img/horse.png" type="image/x-icon">
 </head>
 
 <body onload="desabilitarPlay()">
     <input id="volume" type="button" class="volumeButton" onclick="stopMusic()"></input>
-    
+
     <!--Primeiro Bloco-->
     <div class="wrapper">
         <!--escurece o fundo-->
@@ -99,77 +99,73 @@
 
     <!--segundo bloco-->
     <div class="wrapper-skills">
-        <div class="overlay">
-            <section class="info">
-                <div class="void">
+        <section class="info">
+            <div class="void">
+            </div>
+            <div class="card">
+                <h2> Habilidades</h2>
+                <div class="skill-icons">
+                    <img src="img/html.png" alt="HTML" title="HTML">
+                    <img src="img/css.png" alt="CSS" title="CSS">
+                    <img src="img/js.svg" alt="JavaScript" title="JavaScript">
+                    <img src="img/biblioteca.png" alt="React" title="React">
+                    <img src="img/flutter.svg" alt="Flutter" title="Flutter">
+                    <img src="img/java.png" alt="Java" title="Java">
+                    <img src="img/mysql.png" alt="SQL" title="SQL">
+                    <img src="img/git.png" alt="Git" title="Git">
+                    <img src="img/docker.svg" alt="docker" title="Docker">
                 </div>
-                <div class="card">
-                    <h2> Habilidades</h2>
-                    <div class="skill-icons">
-                        <img src="img/html.png" alt="HTML" title="HTML">
-                        <img src="img/css.png" alt="CSS" title="CSS">
-                        <img src="img/js.svg" alt="JavaScript" title="JavaScript">
-                        <img src="img/biblioteca.png" alt="React" title="React">
-                        <img src="img/flutter.svg" alt="Flutter" title="Flutter">
-                        <img src="img/java.png" alt="Java" title="Java">
-                        <img src="img/mysql.png" alt="SQL" title="SQL">
-                        <img src="img/git.png" alt="Git" title="Git">
-                        <img src="img/docker.svg" alt="docker" title="Docker">
-                    </div>
-                </div>
-        </div>
+            </div>
         </section>
     </div>
     <!--fim do segundo bloco-->
 
     <!--terceiro bloco-->
     <div class="wrapper-projects">
-        <div class="overlay">
-            <div class="title-projects">
-                <H1>Outros projetos</H1>
+
+        <div class="title-projects">
+            <H1>Outros projetos</H1>
+        </div>
+        <section class="info">
+            <div class="card">
+                <div class="img-projeto">
+                    <img src="img/madro.png" alt="madro">
+                </div>
+                <h2>Madro Store</h2>
+                <p>
+                    Projeto em desenvolvimento de um site de e-commerce construído com ReactJs.<br>
+                    (<a class="cliqueaqui" href="https://rodrigo-0990.github.io/Madro-Store/" target="blank">Link do
+                        site</a>).
+                </p>
             </div>
-            <section class="info">
-                <div class="card">
-                    <div class="img-projeto">
-                        <img src="img/madro.png" alt="madro">
-                    </div>
-                    <h2>Madro Store</h2>
+            <div class="card">
+                <div class="img-projeto">
+                    <img src="img/mymoney.png" alt="mymoney">
+                </div>
+                <h2>MyMoney</h2>
+                <div class="texto-projeto">
                     <p>
-                        Projeto em desenvolvimento de um site de e-commerce construído com ReactJs.<br>
-                        (<a class="cliqueaqui" href="https://rodrigo-0990.github.io/Madro-Store/" target="blank">Link do
-                            site</a>).
+                        Projeto em desenvolvimento de um aplicativo de gerenciamento de finanças pessoais
+                        contruido
+                        com
+                        Flutter<br>
+                        (<a class="cliqueaqui" href="https://github.com/RodriGo-0990/Madro-Store" target="blank">Link do
+                            repositório</a>).
                     </p>
                 </div>
-                <div class="card">
-                    <div class="img-projeto">
-                        <img src="img/mymoney.png" alt="mymoney">
-                    </div>
-                    <h2>MyMoney</h2>
-                    <div class="texto-projeto">
-                        <p>
-                            Projeto em desenvolvimento de um aplicativo de gerenciamento de finanças pessoais
-                            contruido
-                            com
-                            Flutter<br>
-                            (<a class="cliqueaqui" href="https://github.com/RodriGo-0990/Madro-Store"
-                                target="blank">Link do
-                                repositório</a>).
-                        </p>
-                    </div>
+            </div>
+            <div class="card">
+                <div class=" img-projeto">
+                    <img src="img/commingsoon.png" alt="embreve">
                 </div>
-                <div class="card">
-                    <div class=" img-projeto">
-                        <img src="img/commingsoon.png" alt="embreve">
-                    </div>
-                    <h2>Em Breve</h2>
-                    <div>
-                        <marquee>
-                            <p>Em breve mais projetos</p>
-                        </marquee>
-                    </div>
+                <h2>Em Breve</h2>
+                <div>
+                    <marquee>
+                        <p>Em breve mais projetos</p>
+                    </marquee>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
     </div>
     <!--fim do terceiro bloco-->
 
@@ -199,15 +195,13 @@
                 </div>
                 <div class="wrapper-canvas">
                     <canvas class="canvas" id="canvas"></canvas>
-                    <div class="time">
-                        <div class="tempo1">
-                            <p id="tempo1">05:00</p>
-                            <p id="placar1"></p>
-                        </div>
-                        <div class="tempo2">
-                            <p id="placar2"></p>
-                            <p id="tempo2">05:00</p>
-                        </div>
+                    <div class="tempo1">
+                        <p id="tempo1">05:00</p>
+                        <p id="placar1"></p>
+                    </div>
+                    <div class="tempo2">
+                        <p id="placar2"></p>
+                        <p id="tempo2">05:00</p>
                     </div>
                 </div>
 
@@ -231,7 +225,6 @@
 
     </div>
     <!--fim do quarto bloco-->
-
     <footer>
         <div class="rodape">
             <p>©MyChessProject. Todos os direitos reservados</p>

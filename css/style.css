@@ -54,6 +54,7 @@ body {
     margin: 0;
     overflow-y: auto;
     overflow-x: hidden;
+    background-color: hwb(0 18% 82%);
 }
 html{
     width: 100%;
@@ -79,7 +80,7 @@ html{
 /* Primeiro bloco */
 .wrapper {
     width: 100%;
-    background-image: url(../img/bg.jpg);
+    background-image: url(../img/bg.webp);
     background-size: cover;
     height: 100vh;
     box-shadow:2px 2px 15px 2px black;
@@ -277,7 +278,7 @@ a:hover {
 /*projetos*/
 .wrapper-projects {
     margin-top: 10em;
-    background-image: url(../img/bg2.png);
+    background-image: url(../img/bg2.webp);
     background-size: cover;
     height: fit-content;
 }
@@ -321,7 +322,6 @@ a:hover {
     display: flex;
     flex-wrap: wrap;
     padding: 2em;
-    width: 100%;
     height: fit-content;
     justify-content: center;
     align-items: center;
@@ -336,6 +336,7 @@ a:hover {
 }
 
 .wrapper-canvas {
+    position: relative;
     display: flex;
 }
 
@@ -351,20 +352,21 @@ a:hover {
 .tempo1 {
     position: absolute;
     top: 0;
-    padding-left: 0.5em;
+    left: -5px;
+    padding-left: 0.3em;
     color: #e6e673d3;
 }
 
 .tempo2 {
     position: absolute;
     bottom: 0;
-    padding-left: 0.5em;
+    left: -5px;
+    padding-left: 0.3em;
     color: #e6e673d3;
 }
-
-.time {
-    height: 24em;
-    position: relative;
+.tempo2,
+.tempo1 p{
+    font-weight: bold;
 }
 
 .options p {
@@ -416,36 +418,33 @@ footer {
     background-color: #000000;
     position:relative;
     height: 50px;
+    padding: 1em;
 }
 
 .rodape {
-    margin: 0 auto;
-    display: flex;
-    width: 70%;
     text-align:center;
-    padding: 1em;
     color: white
 }
 /* media queries */
 
 /* Largura */
-@media(max-device-width: 420px) {
+@media(max-width: 420px) {
    .menu{
      gap: 15px;
+     flex-wrap: wrap;
    }
-   .menu a{
-    font-size: small;
+   .info{
+    margin: 0;
+    width: 100%;
    }
-   .canvas{
-    width: 20em;
-    height: 20em;
-    padding: 0.2em;
+   .screen{
+    gap: 12px;
    }
    .time{
     height: 20em;
    }
 }
-@media(min-device-width: 920px) {
+@media (max-width: 915px) {
     .wrapper{
         height: fit-content;
     }
