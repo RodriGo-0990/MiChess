@@ -35,7 +35,6 @@
                     </div>
                     <!--menu-->
                     <div class="menu">
-                        <a href="#">Sobre mim</a>
                         <a href="#">Projetos</a>
                         <a href="#">Habilidades</a>
                         <a href="#">Jogar</a>
@@ -126,45 +125,53 @@
         <div class="title-projects">
             <H1>Outros projetos</H1>
         </div>
-        <section class="info">
-            <div class="card">
-                <div class="img-projeto">
-                    <img src="img/madro.png" alt="madro">
+        <section id="info" class="info">
+                <!--CARROSSEL-->
+                <div class="carrossel">
+                    <button id="prev">«</button>
+                    <button id="next">»</button>
                 </div>
-                <h2>Madro Store</h2>
-                <p>
-                    Projeto em desenvolvimento de um site de e-commerce construído com ReactJs.<br>
-                    (<a class="cliqueaqui" href="https://rodrigo-0990.github.io/Madro-Store/" target="blank">Link do
-                        site</a>).
-                </p>
-            </div>
-            <div class="card">
-                <div class="img-projeto">
-                    <img src="img/mymoney.png" alt="mymoney">
-                </div>
-                <h2>MyMoney</h2>
-                <div class="texto-projeto">
+
+                <div id="card-project" class="card">
+                    <div class="img-projeto">
+                        <img src="img/madro.png" alt="madro">
+                    </div>
+                    <h2>Madro Store</h2>
                     <p>
-                        Projeto em desenvolvimento de um aplicativo de gerenciamento de finanças pessoais
-                        contruido
-                        com
-                        Flutter<br>
-                        (<a class="cliqueaqui" href="https://github.com/RodriGo-0990/Madro-Store" target="blank">Link do
-                            repositório</a>).
+                        Projeto em desenvolvimento de um site de e-commerce construído com ReactJs.<br>
+                        (<a class="cliqueaqui" href="https://rodrigo-0990.github.io/Madro-Store/" target="blank">Link do
+                            site</a>).
                     </p>
                 </div>
-            </div>
-            <div class="card">
-                <div class=" img-projeto">
-                    <img src="img/commingsoon.png" alt="embreve">
+                <div id="card-project" class="card">
+                    <div class="img-projeto">
+                        <img src="img/mymoney.png" alt="mymoney">
+                    </div>
+                    <h2>MyMoney</h2>
+                    <div class="texto-projeto">
+                        <p>
+                            Projeto em desenvolvimento de um aplicativo de gerenciamento de finanças pessoais
+                            contruido
+                            com
+                            Flutter<br>
+                            (<a class="cliqueaqui" href="https://github.com/RodriGo-0990/Madro-Store"
+                                target="blank">Link do
+                                repositório</a>).
+                        </p>
+                    </div>
                 </div>
-                <h2>Em Breve</h2>
-                <div>
-                    <marquee>
-                        <p>Em breve mais projetos</p>
-                    </marquee>
+                <div id="card-project" class="card">
+                    <div class=" img-projeto">
+                        <img src="img/commingsoon.png" alt="embreve">
+                    </div>
+                    <h2>Em Breve</h2>
+                    <div>
+                        <marquee>
+                            <p>Em breve mais projetos</p>
+                        </marquee>
+                    </div>
                 </div>
-            </div>
+                
         </section>
     </div>
     <!--fim do terceiro bloco-->
@@ -225,16 +232,39 @@
 
     </div>
     <!--fim do quarto bloco-->
+
     <footer>
         <div class="rodape">
-            <p>©MyChessProject. Todos os direitos reservados</p>
+            <div>
+                <p>©MyChessProject</p>
+            </div>
+            <div class="divIcons">
+                <div class="contatoIcon">
+                    <a href="https://github.com/RodriGo-0990" target="blank"> <img src="./img/github.svg"
+                            alt="github-icon" title="Github"></a>
+                </div>
+                <div class="contatoIcon">
+                    <a href="https://www.instagram.com/rodrigo_rodrigues0990/" target="blank"> <img
+                            src="./img/instagram.svg" alt="Instagram-icon" title="Instagram"></a>
+                </div>
+                <div class="contatoIcon">
+                    <a href="https://www.linkedin.com/in/rodrigo-madruga-rodrigues-7478491b3/" target="blank"> <img
+                            src="./img/linkedin.svg" alt="Linkedin-icon" title="Linkedin"></a>
+
+                </div>
+                <div class="contatoIcon">
+                    <a href="https://wa.me/5548998330229" target="blank">
+                        <img src="./img/whats.svg" alt="whatsapp-icon" title="WhatsApp"></a>
+                </div>
+                <div class="contatoIcon">
+                    <a href="mailto:rodrigorodrigues0990@hotmail.com"><img src="./img/mail.png"></a>
+                </div>
+            </div>
         </div>
     </footer>
 
-
-
-
     <script src="./javaScript/jogo.js"></script>
+    <script src="./javaScript/carroussel.js"></script>
 
 </body>
 

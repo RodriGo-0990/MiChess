@@ -43,8 +43,7 @@
     --gradientOverlay: linear-gradient(0deg,
             #040404d6,
             #10101050,
-            #10101050
-        );
+            #10101050);
 }
 
 
@@ -56,14 +55,17 @@ body {
     overflow-x: hidden;
     background-color: hwb(0 18% 82%);
 }
-html{
+
+html {
     width: 100%;
 }
+
 .overlay {
     background-image: var(--gradientOverlay);
     background-size: 240rem;
     height: 100%;
 }
+
 .info {
     margin-top: 3em;
     padding: 2em;
@@ -83,8 +85,9 @@ html{
     background-image: url(../img/bg.webp);
     background-size: cover;
     height: 100vh;
-    box-shadow:2px 2px 15px 2px black;
+    box-shadow: 2px 2px 15px 2px black;
 }
+
 /* Cabeçalho */
 header {
     width: 100%;
@@ -92,12 +95,14 @@ header {
     position: relative;
     box-shadow: 1px -10px 12px 10px rgba(255, 255, 255, 0.601);
 }
-.header-fixed{
+
+.header-fixed {
     width: 100%;
     background-color: #3e3d3d5c;
     position: fixed;
     box-shadow: 1px -10px 12px 10px rgba(255, 255, 255, 0.601);
 }
+
 .center {
     width: 100%;
     display: flex;
@@ -106,14 +111,17 @@ header {
     justify-content: space-between;
     padding: 1em;
 }
+
 .title-wrapper {
     display: flex;
     align-items: center;
     gap: 3px;
 }
+
 .logo img {
     width: 38px;
 }
+
 .titulo {
     font-family: "fontface";
     font-weight: bolder;
@@ -121,21 +129,25 @@ header {
     font-size: 24px;
     cursor: pointer;
 }
+
 .menu {
     display: flex;
     flex-wrap: nowrap;
     gap: 30px;
 }
+
 .menu a {
     color: rgba(255, 255, 255, 0.755);
     text-decoration: none;
     font-size: large;
     font-weight: bold;
 }
+
 a:hover {
     color: #616164;
     transition: 0.8s;
 }
+
 .volumeButton {
     background-image: url(../img/volume.png);
     background-repeat: no-repeat;
@@ -168,21 +180,26 @@ a:hover {
     animation: fadeIn 1.5s;
     cursor: pointer;
 }
+
 .card:hover {
     background-position: left;
 }
+
 .card h2 {
     padding-bottom: 1rem;
     text-align: center;
 }
+
 .texto {
     font-size: 20px;
     line-height: 1.5;
     font-weight: bold;
 }
+
 .cliqueaqui {
     color: antiquewhite;
 }
+
 .cliqueaqui:hover {
     color: darkkhaki;
     transition: 0.8s;
@@ -193,10 +210,12 @@ a:hover {
     width: 8px;
     background: #000000dc;
 }
+
 ::-webkit-scrollbar-thumb {
     background: #88888894;
     border-radius: 15px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
     background: #cbcbcbba;
 }
@@ -208,17 +227,21 @@ a:hover {
     justify-content: center;
     gap: 12px;
 }
+
 .divIcons img {
     width: 38px;
     opacity: 0.5;
 }
+
 .divIcons img:hover {
     opacity: 1;
     transition: 1s;
 }
+
 .contatoIcon {
     margin: 0;
 }
+
 /* card-foto */
 .card-foto {
     width: fit-content;
@@ -239,6 +262,7 @@ a:hover {
     animation: fadeIn 1.5s;
     cursor: pointer;
 }
+
 .card-foto img {
     opacity: 0.7;
     width: 100%;
@@ -254,6 +278,7 @@ a:hover {
     background-size: cover;
     height: fit-content;
 }
+
 .skill-icons {
     padding-top: 1em;
     overflow-y: hidden;
@@ -261,12 +286,14 @@ a:hover {
     width: 100%;
     text-align: center;
 }
+
 .skill-icons img {
-    padding:12px;
+    padding: 12px;
     width: 30%;
     filter: grayscale(80%);
     opacity: 0.8;
 }
+
 .skill-icons img:hover {
     transform: scale(1.2);
     filter: grayscale(0%);
@@ -282,12 +309,16 @@ a:hover {
     background-size: cover;
     height: fit-content;
 }
+.wrapper-projects .card{
+    width: 300px;
+    height: 300px;
+}
 .title-projects {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 15px;
-    color:white;
+    color: white;
 }
 .img-projeto {
     text-align: center;
@@ -301,10 +332,52 @@ a:hover {
     width: 70%;
     opacity: 0.8;
 }
-.wrapper-projects .card {
-    width: 300px;
-    height: 300px;
-    /* corrigirresponsividade */
+.carrossel{
+    padding: 1em;
+    max-width: 600px;
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    display: none;
+    flex-shrink: none;
+    gap: 32px;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+#prev{
+    z-index: 9999;
+    font-size: 43px;
+    line-height: 0px;
+    padding-bottom: 8px;
+    font-weight: bold;
+    position: absolute;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 200px;
+    border: 5px solid #1f1f1f;
+    background-color:transparent;
+    color: #1f1f1f;
+    left: 0;
+}
+#next{
+    z-index: 9999;
+    font-size: 43px;
+    line-height: 0px;
+    padding-bottom: 8px;
+    font-weight: bold;
+    position: absolute;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 200px;
+    border: 5px solid #1f1f1f;
+    background-color:transparent;
+    color: #1f1f1f;
+    right:0;
 }
 
 
@@ -322,6 +395,8 @@ a:hover {
     display: flex;
     flex-wrap: wrap;
     padding: 2em;
+    gap: 12px;
+    width: 100%;
     height: fit-content;
     justify-content: center;
     align-items: center;
@@ -364,33 +439,32 @@ a:hover {
     padding-left: 0.3em;
     color: #e6e673d3;
 }
+
 .tempo2,
-.tempo1 p{
+.tempo1 p {
     font-weight: bold;
 }
-
+.options{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .options p {
-    margin-bottom: 1em;
     font-size: 1em;
     text-align: center;
 }
-
 .options label {
     color: #ebeb90b1;
     font-weight: bold;
     font-size: 1.3em;
     font-family: "fontface";
-    padding: 1rem 1rem 0rem 0rem;
 }
-
 .input {
     cursor: pointer;
 }
-
 .div-button {
     text-align: center;
 }
-
 .play {
     font-family: "fontface";
     font-weight: bolder;
@@ -416,36 +490,53 @@ a:hover {
 footer {
     width: 100%;
     background-color: #000000;
-    position:relative;
-    height: 50px;
+    position: relative;
+    height: fit-content;
     padding: 1em;
 }
 
 .rodape {
-    text-align:center;
+    text-align: center;
     color: white
 }
-/* media queries */
-
-/* Largura */
-@media(max-width: 420px) {
-   .menu{
-     gap: 15px;
-     flex-wrap: wrap;
-   }
-   .info{
-    margin: 0;
-    width: 100%;
-   }
-   .screen{
-    gap: 12px;
-   }
-   .time{
-    height: 20em;
-   }
+.rodape img{
+    width: 24px;
 }
-@media (max-width: 915px) {
-    .wrapper{
+
+/* media queries */
+/* Largura */
+@media(max-width:380px) {
+    .canvas {
+        padding: 0.4em;
+        width: 18em;
+        height: 18em;
+    }
+    .options,
+    .screen{
+        margin: 0;
+    }
+
+}
+
+@media(max-width: 420px) {
+    .menu {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+    .texto{
+        font-size: 19px;
+    }
+    .card {
+        width: 100%;
+    }
+    .info {
+        margin: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 935px) {
+    .wrapper {
         height: fit-content;
     }
- }
+}
