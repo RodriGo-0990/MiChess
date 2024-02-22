@@ -14,7 +14,9 @@
 
 <body onload="desabilitarPlay()">
     <input id="volume" type="button" class="volumeButton" onclick="stopMusic()"></input>
-
+    <div class="wrapper-back-to-top">
+        <img src="./img/arrow.gif" alt="BackToTop">
+    </div>
     <!--Primeiro Bloco-->
     <div class="wrapper">
         <!--escurece o fundo-->
@@ -35,9 +37,9 @@
                     </div>
                     <!--menu-->
                     <div class="menu">
-                        <a href="#">Projetos</a>
-                        <a href="#">Habilidades</a>
-                        <a href="#">Jogar</a>
+                        <a id="skillsmenu" href="#">Habilidades</a>
+                        <a id="projmenu" href="#">Projetos</a>
+                        <a id="playmenu" href="#">Jogar</a>
                     </div>
                 </div>
             </header>
@@ -265,6 +267,7 @@
 
     <script src="./javaScript/jogo.js"></script>
     <script src="./javaScript/carroussel.js"></script>
+    <script src="./javaScript/navegacao.js"></script>
 
 </body>
 

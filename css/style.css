@@ -53,7 +53,9 @@ body {
     margin: 0;
     overflow-y: auto;
     overflow-x: hidden;
-    background-color: rgb(30, 30, 30);
+    background-image: url(../img/grunge-checkerboard-texture-background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 html {
@@ -62,8 +64,19 @@ html {
 
 .overlay {
     background-image: var(--gradientOverlay);
-    background-size: 240rem;
+    background-size: cover;
     height: 100%;
+}
+
+.wrapper-back-to-top{
+    z-index: 99999;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 20px;
+}
+.wrapper-back-to-top img{
+    width:100%;
 }
 
 .info {
@@ -81,11 +94,13 @@ html {
 
 /* Primeiro bloco */
 .wrapper {
+    z-index: 1;
+    position: relative;
     width: 100%;
     background-image: url(../img/bg.webp);
     background-size: cover;
     height: 100vh;
-    box-shadow: 2px 2px 15px 2px black;
+    box-shadow: 15px 25px 22px 2px black;
 }
 
 /* Cabeçalho */
@@ -149,6 +164,7 @@ a:hover {
 }
 
 .volumeButton {
+    z-index:99999;
     background-image: url(../img/volume.png);
     background-repeat: no-repeat;
     background-size: 18px;
@@ -273,10 +289,13 @@ a:hover {
 /* Segundo bloco */
 /*habilidades*/
 .wrapper-skills {
-    margin-top: 10em;
-    background-image: url(../img/bg2.webp);
+    z-index: 0;
+    position: relative;
+    padding-top: 5em;
+    background-image: url(../img/bg5.webp);
     background-size: cover;
     height: fit-content;
+    box-shadow: 15px 25px 22px 2px black;
 }
 
 .skill-icons {
@@ -304,10 +323,11 @@ a:hover {
 /*Terceiro bloco*/
 /*projetos*/
 .wrapper-projects {
-    margin-top: 10em;
+    padding-top: 5em;
     background-image: url(../img/bg2.webp);
     background-size: cover;
     height: fit-content;
+    box-shadow: 15px 25px 22px 2px black;
 }
 
 .title-projects {
@@ -404,10 +424,7 @@ a:hover {
 
 /* XADREZ */
 .wrapper-jogo {
-    margin-top: 10em;
-    background-image: url(../img/grunge-checkerboard-texture-background.jpg);
-    background-size: cover;
-    background-attachment: fixed;
+    padding-top: 5em;
     height: fit-content;
 
 }
