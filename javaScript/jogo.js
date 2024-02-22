@@ -72,7 +72,7 @@ function checkBestMoves() {
                 for (j = 0; j < boardgame.length; j++) {
 
                     if (boardgame[j].getPiece() != null && boardgame[j].getPiece().getAtacked()) {
-                        movimentosArray.unshift(new Movimentos(boardgame[index], boardgame[j], boardgame[index].getPiece(), boardgame[j].getPiece(), boardgame[j].getPiece().getPontos()));    
+                        movimentosArray.unshift(new Movimentos(boardgame[index], boardgame[j], boardgame[index].getPiece(), boardgame[j].getPiece(), boardgame[j].getPiece().getPontos()));
                     }
                     if (boardgame[j].getSetted()) {
                         movimentosArray.unshift(new Movimentos(boardgame[index], boardgame[j], boardgame[index].getPiece(), null, 0));
@@ -2395,13 +2395,13 @@ function play() {
         const rect = canvas.getBoundingClientRect();
         let x;
         let y;
-        if (invertido == false) {
-            x = (event.clientX - rect.left) * canvas.width / rect.width;
-            y = (event.clientY - rect.top) * canvas.height / rect.height;
+        if (!invertido) {
+            x = (event.clientX - (rect.left + 23)) * (canvas.width + 50) / rect.width;
+            y = (event.clientY - (rect.top + 23)) * (canvas.height + 20) / rect.height;
         }
-        if (invertido == true) {
-            x = -(event.clientX - rect.right) * canvas.width / rect.width;
-            y = -(event.clientY - rect.bottom) * canvas.height / rect.height;
+        if (invertido) {
+            x = -(event.clientX - (rect.right - 23)) * (canvas.width + 50) / rect.width;
+            y = -(event.clientY - (rect.bottom - 23)) * (canvas.height + 20) / rect.height;
         }
         constRender(context, invertido);
         for (i = 0; i < boardgame.length; i++) {
@@ -2419,14 +2419,15 @@ function play() {
         let x;
         let y;
         if (!invertido) {
-            x = (event.clientX - rect.left) * canvas.width / rect.width;
-            y = (event.clientY - rect.top) * canvas.height / rect.height;
+            x = (event.clientX - (rect.left + 23)) * (canvas.width + 50) / rect.width;
+            y = (event.clientY - (rect.top + 23)) * (canvas.height + 20) / rect.height;
 
         }
         if (invertido) {
-            x = -(event.clientX - rect.right) * canvas.width / rect.width;
-            y = -(event.clientY - rect.bottom) * canvas.height / rect.height;
+            x = -(event.clientX - (rect.right - 23)) * (canvas.width + 50) / rect.width;
+            y = -(event.clientY - (rect.bottom - 23)) * (canvas.height + 20) / rect.height;
         }
+
         if (turno != timeIA) {
             for (i = 0; i < boardgame.length; i++) {
 

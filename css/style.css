@@ -280,7 +280,7 @@ a:hover {
 }
 
 .skill-icons {
-    padding-top: 1em;
+    padding: 1em;
     overflow-y: hidden;
     overflow-x: hidden;
     width: 100%;
@@ -309,10 +309,6 @@ a:hover {
     background-size: cover;
     height: fit-content;
 }
-.wrapper-projects .card{
-    width: 300px;
-    height: 300px;
-}
 .title-projects {
     display: flex;
     justify-content: center;
@@ -334,16 +330,11 @@ a:hover {
 }
 .carrossel{
     padding: 1em;
-    max-width: 600px;
     position: relative;
     width: 100%;
-    height: fit-content;
     display: none;
-    flex-shrink: none;
     gap: 32px;
-    flex-shrink: 0;
     justify-content: center;
-    align-items: center;
     overflow-y: hidden;
     overflow-x: hidden;
 }
@@ -362,6 +353,7 @@ a:hover {
     background-color:transparent;
     color: #1f1f1f;
     left: 0;
+    top:50%;
 }
 #next{
     z-index: 9999;
@@ -378,6 +370,11 @@ a:hover {
     background-color:transparent;
     color: #1f1f1f;
     right:0;
+    top:50%;
+}
+.carrossel .card{
+    flex-shrink: 0;
+    width: 90%;
 }
 
 
@@ -418,7 +415,7 @@ a:hover {
 .canvas {
     background-image: url(../img/board1.jpg);
     background-size: cover;
-    padding: 0.6em;
+    padding: 0.5em;
     width: 24em;
     height: 24em;
     border: 1rem solid #391f02f2;
@@ -515,9 +512,7 @@ footer {
     .screen{
         margin: 0;
     }
-
 }
-
 @media(max-width: 420px) {
     .menu {
         gap: 15px;
@@ -532,6 +527,18 @@ footer {
     .info {
         margin: 0;
         width: 100%;
+    }
+    
+}
+@media(max-width: 530px){
+    .skill-icons img{
+        width: 80px;
+    }
+    .skill-icons{
+        padding: 0;
+    }
+    .card{
+        height: auto;
     }
 }
 
