@@ -53,7 +53,7 @@ body {
     margin: 0;
     overflow-y: auto;
     overflow-x: hidden;
-    background-color: hwb(0 18% 82%);
+    background-color: rgb(30, 30, 30);
 }
 
 html {
@@ -309,6 +309,7 @@ a:hover {
     background-size: cover;
     height: fit-content;
 }
+
 .title-projects {
     display: flex;
     justify-content: center;
@@ -316,29 +317,48 @@ a:hover {
     padding: 15px;
     color: white;
 }
+
+.wrapper-projects .card {
+    width: 250px;
+}
+
 .img-projeto {
     text-align: center;
 }
+
 .img-projeto :hover {
     transform: scale(2);
     opacity: 1;
     transition: 2s;
 }
+
 .img-projeto img {
     width: 70%;
     opacity: 0.8;
 }
-.carrossel{
-    padding: 1em;
+
+/* CARROSSEL */
+.wrapper-carrossel {
+    padding: 2em;
     position: relative;
     width: 100%;
     display: none;
-    gap: 32px;
-    justify-content: center;
+}
+
+.carrossel {
+    padding: 1em;
+    width: 100%;
+    display: none;
+    gap: 33px;
     overflow-y: hidden;
-    overflow-x: hidden;
+    overflow-x: auto;
 }
-#prev{
+
+.carrossel::-webkit-scrollbar {
+    display: none;
+}
+
+#prev {
     z-index: 9999;
     font-size: 43px;
     line-height: 0px;
@@ -349,13 +369,15 @@ a:hover {
     width: 35px;
     height: 35px;
     border-radius: 200px;
-    border: 5px solid #1f1f1f;
-    background-color:transparent;
-    color: #1f1f1f;
+    border: 5px solid #000000;
+    background-color: transparent;
+    color: #000000;
+    box-shadow: 1px 1px 3px 2px #00000092;
     left: 0;
-    top:50%;
+    top: 50%;
 }
-#next{
+
+#next {
     z-index: 9999;
     font-size: 43px;
     line-height: 0px;
@@ -366,15 +388,17 @@ a:hover {
     width: 35px;
     height: 35px;
     border-radius: 200px;
-    border: 5px solid #1f1f1f;
-    background-color:transparent;
-    color: #1f1f1f;
-    right:0;
-    top:50%;
+    border: 5px solid #000000;
+    background-color: transparent;
+    color: #000000;
+    box-shadow: 1px 1px 3px 2px #00000092;
+    right: 0;
+    top: 50%;
 }
-.carrossel .card{
+
+.carrossel .card {
     flex-shrink: 0;
-    width: 90%;
+    width: 100%;
 }
 
 
@@ -441,27 +465,33 @@ a:hover {
 .tempo1 p {
     font-weight: bold;
 }
-.options{
+
+.options {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
 .options p {
     font-size: 1em;
     text-align: center;
 }
+
 .options label {
     color: #ebeb90b1;
     font-weight: bold;
     font-size: 1.3em;
     font-family: "fontface";
 }
+
 .input {
     cursor: pointer;
 }
+
 .div-button {
     text-align: center;
 }
+
 .play {
     font-family: "fontface";
     font-weight: bolder;
@@ -496,7 +526,8 @@ footer {
     text-align: center;
     color: white
 }
-.rodape img{
+
+.rodape img {
     width: 24px;
 }
 
@@ -508,36 +539,44 @@ footer {
         width: 18em;
         height: 18em;
     }
+
     .options,
-    .screen{
+    .screen {
         margin: 0;
     }
 }
+
 @media(max-width: 420px) {
     .menu {
         gap: 15px;
         flex-wrap: wrap;
     }
-    .texto{
+
+    .texto {
         font-size: 19px;
     }
+
     .card {
         width: 100%;
     }
+
     .info {
         margin: 0;
         width: 100%;
     }
-    
+
 }
-@media(max-width: 530px){
-    .skill-icons img{
+
+@media(max-width: 530px) {
+    .skill-icons img {
         width: 80px;
     }
-    .skill-icons{
+
+    .skill-icons {
         padding: 0;
     }
-    .card{
+
+    .card {
         height: auto;
     }
 }

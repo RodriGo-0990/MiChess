@@ -1,20 +1,22 @@
 document.addEventListener("DOMContentLoaded", ()=>{
     let info = document.getElementById("info");
+    let wrapper = document.querySelector(".wrapper-carrossel")
     let carrossel = document.querySelector(".carrossel");
     let cards = document.querySelectorAll("#card-project");
-    let cardWidth = cards[0].offsetWidth;
-    let prev = document.getElementById("#prev");
-    let next = document.getElementById("#next");
+    let prev = document.getElementById("prev");
+    let next = document.getElementById("next");
     
     // Função para verificar e ajustar o estilo do carrossel
     function checkWidth() {
         let windowWidth = window.innerWidth;
-        if (windowWidth < 512) {
+        if (windowWidth < 900) {
+            wrapper.style.display = "flex";
             carrossel.style.display = "flex";
             for (let i = 0; i < cards.length; i++) {
                 carrossel.appendChild(cards[i]);
             }
         } else {
+            wrapper.style.display = "none";
             carrossel.style.display = "none";
             for (let i = 0; i < cards.length; i++) {
                 info.appendChild(cards[i]);
@@ -25,17 +27,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     // Funções para movimentação do carrossel
     function prevCard() {
-        if (currentIndex < cards.length - 1) {
-            currentIndex++;
-            carrossel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-        }
+      
     }
 
     function nextCard() {
-        if (currentIndex > 0) {
-            currentIndex--;
-            carrossel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-        }
+      
     }
 
     // Adicionar ouvinte de evento para redimensionamento da janela
