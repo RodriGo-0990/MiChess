@@ -74,6 +74,7 @@ html {
     right: 0;
     bottom: 0;
     margin: 20px;
+    cursor: pointer;
 }
 .wrapper-back-to-top img{
     width:100%;
