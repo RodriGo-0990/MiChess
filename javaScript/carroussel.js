@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         cards[currentCard].scrollIntoView({
             block:"nearest",
             behavior:"smooth",
+            inline:"center"
         })
     }
     function nextCard() {
@@ -40,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         cards[currentCard].scrollIntoView({
             block:"nearest",
             behavior:"smooth",
+            inline:"center"
         })
     }
 

@@ -7,18 +7,6 @@
     font-family: 'Arial Narrow Bold'
 }
 
-/* Animação */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-
 /*fonte*/
 @font-face {
     font-family: 'fontface';
@@ -194,7 +182,6 @@ a:hover {
     background-size: 240rem;
     transition: background-position 0.9s;
     box-shadow: 4px 3px 20px 3px #737272c8;
-    animation: fadeIn 1.5s;
     cursor: pointer;
 }
 
@@ -208,7 +195,7 @@ a:hover {
 }
 
 .texto {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.5;
     font-weight: bold;
 }
@@ -292,7 +279,7 @@ a:hover {
 .wrapper-skills {
     z-index: 0;
     position: relative;
-    padding-top: 5em;
+    padding: 2em;
     background-image: url(../img/bg5.webp);
     background-size: cover;
     height: fit-content;
@@ -356,6 +343,9 @@ a:hover {
 .img-projeto img {
     width: 70%;
     opacity: 0.8;
+}
+#card-project p{
+    font-weight: bold;
 }
 
 /* CARROSSEL */
@@ -427,7 +417,6 @@ a:hover {
 .wrapper-jogo {
     padding-top: 5em;
     height: fit-content;
-
 }
 
 .screen {
@@ -446,7 +435,7 @@ a:hover {
     background-image: linear-gradient(#17171772 20%, #0000009b);
     letter-spacing: 1px;
     box-shadow: 4rem 3rem 1rem -1rem #000000c8;
-    animation: fadeIn 1.5s;
+    visibility: hidden;
 }
 
 .wrapper-canvas {
@@ -571,7 +560,7 @@ footer {
     }
 
     .texto {
-        font-size: 19px;
+        font-size: 16px;
     }
 
     .card {
@@ -582,24 +571,26 @@ footer {
         margin: 0;
         width: 100%;
     }
-
+    
 }
 
 @media(max-width: 530px) {
     .skill-icons img {
         width: 80px;
     }
-
     .skill-icons {
         padding: 0;
     }
-
+    .wrapper-skills{
+        padding-left: 0;
+        padding-right: 0;
+    }
     .card {
         height: auto;
     }
 }
 
-@media (max-width: 935px) {
+@media (max-width: 1135px) {
     .wrapper {
         height: fit-content;
     }

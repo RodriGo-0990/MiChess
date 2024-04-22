@@ -46,4 +46,25 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", checkScroll);
 })
 
+//SCROLLREVEAL
+window.reveal_ = ScrollReveal({reset:false})
 
+reveal_.reveal('.card',
+{
+    duration:2000,
+    distance:'20px',
+})
+reveal_.reveal('.card-skills',
+{
+    origin:'right',
+    distance:'70px', 
+})
+reveal_.reveal('.image-profile',
+{
+    duration:2000,
+    distance:'20px',
+})
+reveal_.reveal('.screen',
+{
+    duration:2000,   
+})
