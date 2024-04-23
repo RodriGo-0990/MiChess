@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let skills = document.getElementById("skillsmenu");
     let projects = document.getElementById("projmenu");
     let play = document.getElementById("playmenu");
-    let arrow = document.querySelector(".wrapper-back-to-top")
+    let arrow = document.querySelector(".wrapper-back-to-top");
 
     //função para navegação
     function checkScroll() {
@@ -47,24 +47,25 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 //SCROLLREVEAL
-window.reveal_ = ScrollReveal({ reset: false })
+window.reveal_ = ScrollReveal({ reset: true })
 reveal_.reveal('.profile > .card',
     {
-        duration: 3000,
+        duration: 2000,
         distance: '40px',
     })
 
 reveal_.reveal('.image-profile',
     {
-        duration: 3000,
+        duration: 2000,
         distance: '40px',
     })
 
+let distance =  window.innerWidth < 900 ? '20px' : '100px';
 reveal_.reveal('.card-skill',
     {
         origin: 'right',
         duration: 2000,
-        distance: '100px',
+        distance: distance,
     })
 
 reveal_.reveal('.wrapper-carrossel',
@@ -75,17 +76,17 @@ reveal_.reveal('.wrapper-carrossel',
 
 if (window.innerWidth > 900) {
     reveal_.reveal('.card1', {
-        duration: 2000,
+        duration: 1000,
 
     })
     reveal_.reveal('.card2', {
         duration: 1000,
-        delay: 500,
+        delay: 600,
 
     })
     reveal_.reveal('.card3', {
-        duration: 1400,
-        delay: 800,
+        duration: 1000,
+        delay: 1000,
 
     })
 }
