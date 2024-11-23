@@ -16,128 +16,180 @@
 
 <body onload="desabilitarPlay()">
     <input id="volume" type="button" class="volumeButton" onclick="stopMusic()"></input>
-    <div class="wrapper-back-to-top">
-        <img src="./img/arrow.gif" alt="BackToTop">
-    </div>
-    <!--Primeiro Bloco-->
-    <div class="wrapper">
-        <!--escurece o fundo-->
-        <div class="overlay">
-            <!--cabeçalho-->
-            <header>
-                <div class="center">
-                    <!--logo/titulo-->
-                    <div class="title-wrapper">
-                        <div class="logo">
-                            <a href="index.html">
-                                <img src="./img/horse.png" alt="logo">
-                            </a>
-                        </div>
-                        <div class="titulo">
-                            MyChessProject
-                        </div>
-                    </div>
-                    <!--menu-->
-                    <div class="menu">
-                        <a id="skillsmenu" href="#">Habilidades</a>
-                        <a id="projmenu" href="#">Projetos</a>
-                        <a id="playmenu" href="#">Jogar</a>
-                    </div>
-                </div>
-            </header>
-
-            <!--apresentação-->
-            <section class="info">
-                <div class="profile">
-                    <div class="card">
-                        <h2>Sobre mim</h2>
-                        <p class="texto">
-                            Meu nome é Rodrigo,
-                            sou desenvolvedor web e um entusiasta de tecnologia, 
-                            games, música, filmes e xadrez. 
-                            Formado em Análise e desenvolvimento de sistemas,
-                            sempre dedicado a melhorar minhas habilidades e 
-                            conhecimentos em programação.
-                            Nesta página mostro meu portfólio de outros projetos
-                            e um jogo de xadrez que desenvolvi em JavaScript.
-                            Você pode conferir o código do projeto no meu GitHub
-                            <a class="cliqueaqui"
-                                href="https://github.com/RodriGo-0990/MyChessProject/blob/master/javaScript/jogo.js"
-                                target="blank">clicando aqui.</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="image-profile">
-                    <div class="card-foto">
-                        <img src="./img/perfil.png">
-                    </div>
-                    <!-- redes -->
-                    <div class="divIcons">
-                        <div class="contatoIcon">
-                            <a href="https://github.com/RodriGo-0990" target="blank"> <img src="./img/github.svg"
-                                    alt="github-icon" title="Github"></a>
-                        </div>
-                        <div class="contatoIcon">
-                            <a href="https://www.instagram.com/rodrigo_rodrigues0990/" target="blank"> <img
-                                    src="./img/instagram.svg" alt="Instagram-icon" title="Instagram"></a>
-                        </div>
-                        <div class="contatoIcon">
-                            <a href="https://www.linkedin.com/in/rodrigo-madruga-rodrigues-7478491b3/" target="blank"> <img
-                                    src="./img/linkedin.svg" alt="Linkedin-icon" title="Linkedin"></a>
-
-                        </div>
-                        <div class="contatoIcon">
-                            <a href="https://wa.me/5548998330229" target="blank">
-                                <img src="./img/whats.svg" alt="whatsapp-icon" title="WhatsApp"></a>
-                        </div>
-                        <div class="contatoIcon">
-                            <a href="mailto:rodrigorodrigues0990@hotmail.com"><img src="./img/mail.png"></a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <!--cabeçalho-->
+    <header>
+        <div class="center">
+            <!--menu-->
+            <div class="menu">
+                <a id="aboutmenu">Sobre mim</a>
+                <a id="skillsmenu">Habilidades</a>
+                <a id="xpmenu">Qualificação</a>
+                <a id="projmenu">Projetos</a>
+                <a id="playmenu">Jogar</a>
+            </div>
         </div>
-    </div>
+    </header>
+    <!--Primeiro Bloco-->
+    <section class="wrapper" id="home">
+        <!--apresentação-->
+        <div class="info">
+            <div class="profile">
+                <h1>RODRIGO RODRIGUES</h1>
+                <p class="typing-effect"> &nbsp &nbsp &ltDESENVOLVEDOR FRONT-END/></p>
+                 <!-- redes -->
+                 <div class="divIcons">
+                    <div class="contatoIcon">
+                        <a href="https://github.com/RodriGo-0990" target="blank"> <img src="./img/github.svg"
+                                alt="github-icon" title="Github"></a>
+                    </div>
+                    <div class="contatoIcon">
+                        <a href="https://www.instagram.com/rodrigo_rodrigues0990/" target="blank"> <img
+                                src="./img/instagram.svg" alt="Instagram-icon" title="Instagram"></a>
+                    </div>
+                    <div class="contatoIcon">
+                        <a href="https://www.linkedin.com/in/rodrigo-madruga-rodrigues-7478491b3/" target="blank"> <img
+                                src="./img/linkedin.svg" alt="Linkedin-icon" title="Linkedin"></a>
+
+                    </div>
+                    <div class="contatoIcon">
+                        <a href="https://wa.me/5548998330229" target="blank">
+                            <img src="./img/whats.svg" alt="whatsapp-icon" title="WhatsApp"></a>
+                    </div>
+                    <div class="contatoIcon">
+                        <a href="mailto:rodrigorodrigues0990@hotmail.com"><img src="./img/mail.png"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="image-profile">
+                <div class="card-foto">
+                    <img src="./img/perfil.png">
+                </div>
+            </div>
+        </div>
+    </section>
     <!--fim do primeiro bloco-->
 
     <!--segundo bloco-->
-    <div class="wrapper-skills">
-        <section class="info">
-            <div class="card card-skill">
-                <h2> Habilidades</h2>
-                <div class="skill-icons">
-                    <img src="img/html.png" alt="HTML" title="HTML">
-                    <img src="img/css.png" alt="CSS" title="CSS">
-                    <img src="img/js.svg" alt="JavaScript" title="JavaScript">
-                    <img src="img/biblioteca.png" alt="React" title="React">
-                    <img src="img/flutter.svg" alt="Flutter" title="Flutter">
-                    <img src="img/java.png" alt="Java" title="Java">
-                    <img src="img/mysql.png" alt="SQL" title="SQL">
-                    <img src="img/git.png" alt="Git" title="Git">
-                    <img src="img/docker.svg" alt="docker" title="Docker">
-                </div>
+    <section class="wrapper" id="about">
+        <h1 id="title" style="border-bottom: 3px solid black; color:black;">Sobre mim</h1>
+        <div class="info">
+            <div class="texto">
+                <p>
+                    Sou o Rodrigo Rodrigues, 34 anos, formado em Análise e Desenvolvimento de sistemas pela Faculdade
+                    Senai- Florianópolis.</br>
+                    Tenho experiência em programação Java para web, ApiREST, MySQl e metodologia ágil.
+                    Meu foco atual é desenvolver habilidades em UI/UX e expandir meu portifolio para o desenvolvimento
+                    fullstack.
+                    Nesta página, apresento um jogo de xadrez que desenvolvi em JavaScript, além de outros projetos pessoais.
+                </p>
             </div>
-        </section>
-    </div>
-    <!--fim do segundo bloco-->
+        </div>
+    </section>
+    <!---fim do segundo bloco-->
 
     <!--terceiro bloco-->
-    <div class="wrapper-projects">
-
-        <div class="title-projects">
-            <H1>Outros projetos</H1>
-        </div>
-        <section id="info" class="info">
-                <!--CARROSSEL-->
-                <div class="wrapper-carrossel">
-                    <button id="prev">«</button>
-                    <div class="carrossel"></div>
-                    <button id="next">»</button>    
+    <section class="wrapper" id="skills">
+        <h1 id="title"> Habilidades</h1>
+        <div class="info">
+            <div class="skill-icons">
+                <img id="html" src="img/html.png" alt="HTML" title="HTML">
+                <img id="css" src="img/css.png" alt="CSS" title="CSS">
+                <img id="js" src="img/js.svg" alt="JavaScript" title="JavaScript">
+                <img id="react" src="img/biblioteca.png" alt="React" title="React">
+                <img id="flutter" src="img/flutter.svg" alt="Flutter" title="Flutter">
+                <img id="java" src="img/java.png" alt="Java" title="Java">
+                <img id="sql"  src="img/mysql.png" alt="SQL" title="SQL">
+                <img id="git" src="img/git.png" alt="Git" title="Git">
+                <img id="docker" src="img/docker.svg" alt="docker" title="Docker">
+            </div>
+            <div class="level-wrapper">
+                <!-- <p>tec</p> -->
+                <div class="level-bar">
+                    
                 </div>
-                <div id="card-project" class="card card1">
-                    <div class="img-projeto">
-                        <img src="img/madro.png" alt="madro">
+            </div>
+        </div>
+    </section>
+    <!--fim do terceiro bloco-->
+
+    <!-- quarto bloco -->
+    <section class="wrapper" id="xp">
+        <h1 id="title" style="border-bottom: 3px solid black; color:black;">Qualificação</h1>
+        <div class="info">
+            <div class="wrapper-card-xp" style="color: black;">
+                <div class="div-xp">
+                    <h2><img src="/img/job.svg"> Trabalhos</h2>
+                    <div class="card-xp">
+                        <div class="tittle-xp-card">
+                            <h3>Estágio Java</h3>
+                        </div>
+                        <div class="subtitle-xp-card">
+                            <p>Dataprev</p>
+                        </div>
+                        <div class="date-xp-card">
+                            <p><img src="/img/calendar.svg"> Junho/2021 - Junho/2023</p>
+                        </div>
                     </div>
+                    <div class="card-xp">
+                        <div class="tittle-xp-card">
+                            <h3>Desenvolvedor Front-end</h3>
+                        </div>
+                        <div class="subtitle-xp-card">
+                            <p>Freelance</p>
+                        </div>
+                        <div class="date-xp-card">
+                            <p><img src="/img/calendar.svg"> Atualmente</p>
+                        </div>
+                    </div>
+                    <button class="download"><a download href="./pdf/Currículo.pdf"> Download CV <span><img src="/img/download.svg"></span></a></button>
+                </div>
+                <div class="div-xp">
+                    <h2><img src="/img/school.svg"> Formação</h2>
+                    <div class="card-xp">
+                        <div class="tittle-xp-card">
+                            <h3>Análise e Desenvolvimento de Sistemas</h3>
+                        </div>
+                        <div class="subtitle-xp-card">
+                            <p>Senai-Florianopolis</p>
+                        </div>
+                        <div class="date-xp-card">
+                            <p><img src="/img/calendar.svg"> Novembro/2024</p>
+                        </div>
+                    </div>
+                    <div class="card-xp">
+                        <div class="tittle-xp-card">
+                            <h3>Curso Java Completo e POO</h3>
+                        </div>
+                        <div class="subtitle-xp-card">
+                            <p>Udemy</p>
+                        </div>
+                        <div class="date-xp-card">
+                            <p><img src="/img/calendar.svg"> Novembro/2023</p>
+                        </div>
+                    </div>
+                    <div class="card-xp">
+                        <div class="tittle-xp-card">
+                            <h3>Inglês</h3>
+                        </div>
+                        <div class="subtitle-xp-card">
+                            <p>Avançado</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- fim do quarto bloco -->
+
+    <!--quinto bloco-->
+    <section class="wrapper" id="projects">
+        <h1 id="title">Projetos</h1>
+        <div class="info">
+            <div class="card">
+                <div class="img-projeto">
+                    <img src="img/madro.png" alt="madro">
+                </div>
+                <div class="texto-projeto">
                     <h2>Madro Store</h2>
                     <p>
                         Projeto em desenvolvimento de um site de e-commerce construído com ReactJs.<br>
@@ -145,100 +197,99 @@
                             site</a>).
                     </p>
                 </div>
-                <div id="card-project" class="card card2">
-                    <div class="img-projeto">
-                        <img src="img/mymoney.png" alt="mymoney">
-                    </div>
+            </div>
+
+            <div class="card">
+                <div class="img-projeto">
+                    <img src="img/mymoney.png" alt="mymoney">
+                </div>
+                <div class="texto-projeto">
                     <h2>MyMoney</h2>
-                    <div class="texto-projeto">
-                        <p>
-                            Projeto em desenvolvimento de um aplicativo de gerenciamento de finanças pessoais
-                            contruido
-                            com
-                            Flutter<br>
-                            (<a class="cliqueaqui" href="https://github.com/RodriGo-0990/mymoney.git"
-                                target="blank">Link do
-                                repositório</a>).
-                        </p>
-                    </div>
+                    <p>
+                        Projeto em desenvolvimento de um aplicativo de gestão financeira utilizando Flutter<br>
+                        (<a class="cliqueaqui" href="https://rodrigo-0990.github.io/Madro-Store/" target="blank">Link do
+                            site</a>).
+                    </p>
                 </div>
-                <div id="card-project" class="card card3">
-                    <div class=" img-projeto">
-                        <img src="img/commingsoon.png" alt="embreve">
-                    </div>
-                    <h2>Em Breve</h2>
-                    <div>
-                        <marquee>
-                            <p>Em breve mais projetos</p>
-                        </marquee>
-                    </div>
+            </div>
+
+            <div class="card">
+                <div class="img-projeto">
+                    <img src="img/versa.png" alt="versa">
                 </div>
-                
-        </section>
-    </div>
-    <!--fim do terceiro bloco-->
-
-    <!--quarto bloco-->
-    <div class="wrapper-jogo">
-
-        <section class="info">
-
-            <div class="screen">
-
-                <div style="display: none;">
-                    <!--peças negras-->
-                    <img src="./img/peças_negras/Black_Bishop.png" class="pieces" id="blackBishop">
-                    <img src="./img/peças_negras/black_knight.png" class="pieces" id="blackKnight">
-                    <img src="./img/peças_negras/black_Castle.png" class="pieces" id="blackCastle">
-                    <img src="./img/peças_negras/black_King.png" class="pieces" id="blackking">
-                    <img src="./img/peças_negras/Queen.png" class="pieces" id="blackQueen">
-                    <img src="./img/peças_negras/black_Pone.png" class="pieces" id="blackPone">
-
-                    <!--peças brancas-->
-                    <img src="./img/peças_brancas/white_Bishop.png" class="pieces" id="whiteBishop">
-                    <img src="./img/peças_brancas/white_Knight.png" class="pieces" id="whiteKnight">
-                    <img src="./img/peças_brancas/white_Castle.png" class="pieces" id="whiteCastle">
-                    <img src="./img/peças_brancas/white_King.png" class="pieces" id="whiteking">
-                    <img src="./img/peças_brancas/White_Queen.png" class="pieces" id="whiteQueen">
-                    <img src="./img/peças_brancas/white_Pone.png" class="pieces" id="whitePone">
+                <div class="texto-projeto">
+                    <h2>Versa Finance</h2>
+                    <p>
+                        Projeto em desenvolvimento de um site fictício de uma empresa de consultoria financeira <br>
+                        (<a class="cliqueaqui" href="https://rodrigo-0990.github.io/sarti-finance/" target="blank">Link
+                            do
+                            site</a>).
+                    </p>
                 </div>
-                <div class="wrapper-canvas">
-                    <canvas class="canvas" id="canvas"></canvas>
-                    <div class="tempo1">
-                        <p id="tempo1">05:00</p>
-                        <p id="placar1"></p>
-                    </div>
-                    <div class="tempo2">
-                        <p id="placar2"></p>
-                        <p id="tempo2">05:00</p>
-                    </div>
+            </div>
+
+        </div>
+    </section>
+    <!--fim do quinto bloco-->
+
+    <!--sexto bloco-->
+    <section class="wrapper-jogo" id="-wrapper-play">
+    <h1 id="title" style="margin-bottom: 1em;">Jogar</h1>
+
+        <div class="info">
+
+            <div style="display: none;">
+                <!--peças negras-->
+                <img src="./img/peças_negras/Black_Bishop.png" class="pieces" id="blackBishop">
+                <img src="./img/peças_negras/black_knight.png" class="pieces" id="blackKnight">
+                <img src="./img/peças_negras/black_Castle.png" class="pieces" id="blackCastle">
+                <img src="./img/peças_negras/black_King.png" class="pieces" id="blackking">
+                <img src="./img/peças_negras/Queen.png" class="pieces" id="blackQueen">
+                <img src="./img/peças_negras/black_Pone.png" class="pieces" id="blackPone">
+
+                <!--peças brancas-->
+                <img src="./img/peças_brancas/white_Bishop.png" class="pieces" id="whiteBishop">
+                <img src="./img/peças_brancas/white_Knight.png" class="pieces" id="whiteKnight">
+                <img src="./img/peças_brancas/white_Castle.png" class="pieces" id="whiteCastle">
+                <img src="./img/peças_brancas/white_King.png" class="pieces" id="whiteking">
+                <img src="./img/peças_brancas/White_Queen.png" class="pieces" id="whiteQueen">
+                <img src="./img/peças_brancas/white_Pone.png" class="pieces" id="whitePone">
+            </div>
+            <div class="wrapper-canvas">
+                <canvas class="canvas" id="canvas"></canvas>
+                <div class="tempo1">
+                    <p id="tempo1">05:00</p>
+                    <p id="placar1"></p>
+                </div>
+                <div class="tempo2">
+                    <p id="placar2"></p>
+                    <p id="tempo2">05:00</p>
+                </div>
+            </div>
+
+            <div class="options">
+                <div>
+                    <p id="vez"> escolha a cor das peças. </p>
                 </div>
 
-                <div class="options">
-                    <div>
-                        <p id="vez"> escolha a cor das peças. </p>
-                    </div>
-
-                    <div>
-                        <input class="input" type="radio" id="brancas" name="opcao" onclick="escolherCor(this.id)">
-                        <label>Brancas</label>
-                        <input class="input" type="radio" id="negras" name="opcao" onclick="escolherCor(this.id)">
-                        <label>Pretas</label>
-                    </div>
-
-                    <div class="div-button">
-                        <input type="button" class="play" id="play" value="Jogar" onclick="play()">
-                    </div>
+                <div>
+                    <input class="input" type="radio" id="brancas" name="opcao" onclick="escolherCor(this.id)">
+                    <label>Brancas</label>
+                    <input class="input" type="radio" id="negras" name="opcao" onclick="escolherCor(this.id)">
+                    <label>Pretas</label>
                 </div>
-        </section>
 
-    </div>
-    <!--fim do quarto bloco-->
+                <div class="div-button">
+                    <input type="button" class="play" id="play" value="Jogar" onclick="play()">
+                </div>
+            </div>
+    </section>
+    <!--fim do sexto bloco-->
 
     <footer>
         <div class="rodape">
             <div>
-                <p>©MyChessProject</p>
+                <p>Entre em contato.</p>
             </div>
             <div class="divIcons">
                 <div class="contatoIcon">
@@ -265,8 +316,7 @@
         </div>
     </footer>
 
-    <script src="./javaScript/jogo.js" defer ></script>
-    <script src="./javaScript/carroussel.js" defer></script>
+    <script src="./javaScript/jogo.js" defer></script>
 </body>
 
 </html>
