@@ -12,6 +12,7 @@
     font-family: 'RobotoThin';
     src: url(../roboto/Poppins,Roboto_Slab/Roboto_Slab/static/RobotoSlab-Thin.ttf) format("opentype");
 }
+
 @font-face {
     font-family: 'RobotoLight';
     src: url(../roboto/Poppins,Roboto_Slab/Roboto_Slab/static/RobotoSlab-ExtraLight.ttf) format("opentype");
@@ -34,24 +35,27 @@
 /* Cabeçalho */
 header {
     width: 100%;
-    background-color: #1A1A1A;
+    background-color: #191919;
     position: fixed;
+    padding: 1em;
     z-index: 1;
     border-bottom: 1px solid #ffffff76;
     box-shadow: 1px -10px 12px 8px #ffffff99;
 }
+
 .center {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     padding: 1em;
 }
+
 .menu {
     display: flex;
     flex-wrap: nowrap;
     gap: 30px;
 }
+
 .menu a {
     color: #ffffffc1;
     text-decoration: none;
@@ -60,10 +64,12 @@ header {
     font-weight: 800;
     cursor: pointer;
 }
+
 a:hover {
     color: #646461;
     transition: 0.8s;
 }
+
 .volumeButton {
     z-index: 99999;
     background-image: url(../img/volume.png);
@@ -84,6 +90,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 22px;
     width: 100%;
     height: 100vh;
@@ -91,10 +98,11 @@ a:hover {
 }
 
 .info {
+    margin: 0;
     width: 80%;
     padding: 2em;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
@@ -112,6 +120,7 @@ a:hover {
 h1 {
     font-family: 'RobotoLight';
     font-size: 34px;
+    white-space: nowrap;
     border-bottom: 3px solid #ffffff;
     color: #ffffff;
     text-align: center;
@@ -119,7 +128,7 @@ h1 {
 }
 
 #home {
-    background-color: #1A1A1A;
+    background-color: #191919;
 }
 
 #skills {
@@ -132,20 +141,24 @@ h1 {
 }
 
 #xp {
-    background-color: rgba(188, 187, 182, 0.911);
-    height: fit-content;
-    padding: 5em;
+    background-color: #bcbbb6e8;
 }
 
 #projects {
     color: white;
     background-image: url(../img/dark_bg.webp),
-    linear-gradient(to top, black, transparent 50%);
+        linear-gradient(to top, black, transparent 50%);
     background-blend-mode: overlay;
     background-repeat: no-repeat;
     background-size: cover;
     height: fit-content;
     padding: 6em 0;
+}
+
+#projects .info {
+    padding: 3em 0;
+    width: 95%;
+    justify-content: center;
 }
 
 /* primeiro bloco */
@@ -163,19 +176,27 @@ h1 {
     from {
         width: 1ch;
     }
+
     to {
         width: 30ch;
     }
 }
+
 @keyframes blink {
     50% {
         border-color: transparent;
     }
 }
+
 .profile h1 {
     font-size: 24px;
     border: none;
 }
+
+.profile {
+    width: 30ch;
+}
+
 .divIcons {
     padding-top: 1em;
     display: flex;
@@ -207,17 +228,14 @@ h1 {
 .card-foto img {
     opacity: 0.7;
     border: 2px solid #ffffff;
-    border-bottom-left-radius: 5em;
-    border-bottom-right-radius: 20em;
-    border-top-left-radius: 15em;
-    border-top-right-radius: 5em;
+    border-radius: 10em;
     background-color: #ffffff;
 }
 
 /* segundo bloco */
 .texto {
     text-align: center;
-    font-size: 18px;
+    font-size: medium;
     font-weight: bold;
     line-height: 1.5;
     color: black;
@@ -269,6 +287,7 @@ h1 {
     width: 100%;
     display: flex;
     justify-content: center;
+    color: black;
 }
 
 .div-xp {
@@ -293,10 +312,11 @@ h2 {
 .date-xp-card {
     margin-top: 1em;
 }
-.download{
+
+.download {
     color: white;
     font-size: 18px;
-    background-color:#262626;
+    background-color: #262626;
     font-weight: bolder;
     padding: 2px 15px;
     border-radius: 2em;
@@ -304,9 +324,14 @@ h2 {
     margin-top: 1em;
     box-shadow: 1px 3px 1px 1px black;
 }
-.download a{
+
+.download a {
     text-decoration: none;
     color: white;
+}
+
+.download:hover {
+    background-color: #262626cf;
 }
 
 /* Quinto bloco */
@@ -315,22 +340,34 @@ h2 {
     margin: 0;
     border: 1px solid #656565;
     width: 400px;
-    height: 400px;
+    height: 300px;
     display: flex;
-    flex-direction: column;
-    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 1em;
-    background-image: var(--gradientCard);
-    background-position: right;
-    background-size: 200rem;
-    transition: 0.5s;
+    transition: .5s;
     box-shadow: 4px 3px 10px 2px #565656c8;
     cursor: pointer;
 }
 
 .card:hover {
+    background-position: right;
+    background-color: #000000be;
+    background-blend-mode: multiply;
     border: 1px solid #196cca75;
-    box-shadow: 4px 3px 10px 2px #196cca75;
+    box-shadow: 4px 3px 30px 2px #196cca75;
+    animation: roll-bg 10s;
+
+}
+
+@keyframes roll-bg {
+    from {
+        background-position: left;
+    }
+
+    to {
+        background-position: right;
+    }
 }
 
 .card h2 {
@@ -339,30 +376,31 @@ h2 {
 
 .card a {
     text-decoration: none;
-    color: rgb(71, 56, 56);
+    color: #dcd7bf;
 }
+
 .card a:hover {
-    color: rgb(100, 14, 14);
+    color: #d2c064;
     transition: 0.8s;
 }
 
-.img-projeto {
-    width: 100%;
-    height: 60%;
-    margin: 0;
-}
-
 .texto-projeto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
     padding: 1em;
+    font-size: medium;
+    text-align: center;
     margin: 0;
-    color: black;
-    font-weight: bold;
+    color: white;
+    font-weight: 900;
+    height: 100%;
 }
 
-.img-projeto img {
-    width: 100%;
-    height: 100%;
-    border-radius: 1em 1em 0em 0em;
+.texto-projeto:hover {
+    opacity: 1;
+    transition: 1s;
 }
 
 
@@ -375,7 +413,7 @@ h2 {
     justify-content: center;
     align-items: center;
     background-image: url(../img/bg1.webp),
-    linear-gradient(to bottom, black, transparent 70%);
+        linear-gradient(to bottom, black, transparent 70%);
     background-blend-mode: overlay;
     background-repeat: no-repeat;
     background-size: cover;
@@ -478,4 +516,90 @@ footer {
 
 .rodape img {
     width: 24px;
+}
+
+@media (max-width: 340px) {
+    .canvas {
+        width: 20em;
+        height: 20em;
+    }
+}
+
+@media (max-width: 400px) {
+    .card-foto img {
+        width: 200px;
+    }
+
+    #about .info {
+        padding: 3em 0;
+    }
+
+    .texto {
+        font-size: smaller;
+    }
+
+    .skill-icons {
+        padding: 0;
+    }
+
+    .skill-icons img {
+        width: 68px;
+    }
+
+    .canvas {
+        width: 22em;
+        height: 22em;
+    }
+
+}
+
+@media (max-width: 512px) {
+    #xp .info {
+        width: 90%;
+        padding: 1em 0;
+    }
+
+    .div-xp img {
+        width: 18px;
+    }
+
+    .div-xp h2 {
+        font-size: smaller;
+    }
+
+    h3 {
+        font-size: small;
+    }
+
+    .card-xp {
+        padding: 0.5em;
+    }
+
+    .card-xp p {
+        font-size: smaller;
+    }
+
+    .download {
+        font-size: 10px;
+    }
+
+    .download img {
+        width: 16px;
+    }
+
+    #wrapper-play .info {
+        width: 100%;
+        background-image: none;
+    }
+}
+
+@media (max-width: 612px) {
+    .menu {
+        display: none;
+    }
+
+    .card {
+        width: 95%;
+    }
+
 }
