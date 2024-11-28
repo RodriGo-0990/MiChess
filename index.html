@@ -16,9 +16,16 @@
 
 <body onload="desabilitarPlay()">
     <input id="volume" type="button" class="volumeButton" onclick="stopMusic()"></input>
+
     <!--cabeçalho-->
     <header>
-        <div class="center">
+        <div class="hamburguer-menu">
+            <img src="./img/hamburguer_menu.svg">
+        </div>
+        <nav class="center">
+            <div class="portfolio">
+                <h3>PORTFÓLIO</h3>
+            </div>
             <!--menu-->
             <div class="menu">
                 <a id="aboutmenu">Sobre mim</a>
@@ -27,8 +34,22 @@
                 <a id="projmenu">Projetos</a>
                 <a id="playmenu">Jogar</a>
             </div>
-        </div>
+        </nav>
     </header>
+
+    <!-- menu mobile 
+        <div class="menu-mobile">
+            <div class="close-menu">
+                <img src="./img/close_menu.svg">
+            </div>
+            <a id="aboutmenu">Sobre mim</a>
+            <a id="skillsmenu">Habilidades</a>
+            <a id="xpmenu">Qualificação</a>
+            <a id="projmenu">Projetos</a>
+            <a id="playmenu">Jogar</a>
+        </div>
+    -->
+
     <!--Primeiro Bloco-->
     <section class="wrapper" id="home">
         <!--apresentação-->
