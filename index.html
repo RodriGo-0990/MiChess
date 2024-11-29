@@ -7,7 +7,7 @@
     <script src="./javaScript/navegacao.js" defer></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <link rel="stylesheet" href="./css/style.css">
-    <title>MyChessProject</title>
+    <title>Portfólio | Rodrigo Rodrigues</title>
     <!--titulo da aba-->
 
     <!--imagem favicon-->
@@ -23,7 +23,7 @@
             <img src="./img/hamburguer_menu.svg">
         </div>
         <nav class="center">
-            <div class="portfolio">
+            <div class="portfolio" id="homemenu">
                 <h3>PORTFÓLIO</h3>
             </div>
             <!--menu-->
@@ -37,18 +37,17 @@
         </nav>
     </header>
 
-    <!-- menu mobile 
-        <div class="menu-mobile">
-            <div class="close-menu">
-                <img src="./img/close_menu.svg">
-            </div>
-            <a id="aboutmenu">Sobre mim</a>
-            <a id="skillsmenu">Habilidades</a>
-            <a id="xpmenu">Qualificação</a>
-            <a id="projmenu">Projetos</a>
-            <a id="playmenu">Jogar</a>
+    <!-- menu mobile -->
+    <div class="menu-mobile">
+        <div class="close-menu">
+            <img src="./img/close_menu.svg">
         </div>
-    -->
+        <a id="aboutmenu-mobile">Sobre mim</a>
+        <a id="skillsmenu-mobile">Habilidades</a>
+        <a id="xpmenu-mobile">Qualificação</a>
+        <a id="projmenu-mobile">Projetos</a>
+        <a id="playmenu-mobile">Jogar</a>
+    </div>
 
     <!--Primeiro Bloco-->
     <section class="wrapper" id="home">
@@ -80,6 +79,11 @@
                         <a href="mailto:rodrigorodrigues0990@hotmail.com"><img src="./img/mail.png"></a>
                     </div>
                 </div>
+                <div class="download-div">
+                    <button class="download"><a download href="./pdf/Currículo.pdf"> Download CV <span><img
+                                    src="./img/download.svg"></span></a>
+                    </button>
+                </div>
             </div>
             <div class="image-profile">
                 <div class="card-foto">
@@ -98,10 +102,11 @@
                 <p>
                     Sou o Rodrigo Rodrigues, 34 anos, formado em Análise e Desenvolvimento de sistemas.
                     Tenho experiência em programação Java para web, ApiREST, MySQl e metodologia ágil.
-                    Meu foco atual é desenvolver habilidades em UI/UX e expandir meu portfólio para o desenvolvimento
+                    Meu foco atual é desenvolver habilidades em UI/UX e também expandir meu portfólio para o
+                    desenvolvimento
                     fullstack.
-                    Nesta página, apresento um jogo de xadrez que desenvolvi em JavaScript, além de outros projetos
-                    pessoais.
+                    Nesta página, apresento um jogo de xadrez que desenvolvi em JavaScript, além do meu portfólio com
+                    outros projetos.
                 </p>
             </div>
         </div>
@@ -184,7 +189,8 @@
                         </div>
                     </div>
                     <button class="download"><a download href="./pdf/Currículo.pdf"> Download CV <span><img
-                                    src="./img/download.svg"></span></a></button>
+                                    src="./img/download.svg"></span></a>
+                    </button>
                 </div>
                 <div class="div-xp">
                     <h2><img src="./img/school.svg"> Formação</h2>
