@@ -4,18 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'RobotoLight';
-}
-
-/*fonte*/
-@font-face {
-    font-family: 'RobotoThin';
-    src: url(../roboto/Poppins,Roboto_Slab/Roboto_Slab/static/RobotoSlab-Thin.ttf) format("opentype");
-}
-
-@font-face {
-    font-family: 'RobotoLight';
-    src: url(../roboto/Poppins,Roboto_Slab/Roboto_Slab/static/RobotoSlab-ExtraLight.ttf) format("opentype");
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 /* variaveis de cor */
@@ -26,15 +15,20 @@
             #787254a4);
 
     --borderblue: #1c446ed8;
+
+    --bg: linear-gradient(
+        #000000,
+        #212123 
+        );
 }
 
 /* Cabeçalho */
 header {
     width: 100%;
-    background-color: #191919;
+    background: black;
     position: fixed;
     padding: 1em;
-    z-index: 1;
+    z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,7 +68,6 @@ header {
 .menu a {
     color: #ffffffc1;
     text-decoration: none;
-    font-family: 'RobotoLight';
     font-size: large;
     font-weight: 800;
     cursor: pointer;
@@ -106,7 +99,6 @@ a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 22px;
     width: 100%;
     height: 100vh;
     box-shadow: 1px 5px 12px 10px #ffffff;
@@ -114,10 +106,9 @@ a:hover {
 
 .info {
     margin: 0;
-    width: 80%;
-    padding: 2em;
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
@@ -129,9 +120,7 @@ a:hover {
 }
 
 h1 {
-    font-family: 'RobotoLight';
     font-size: 34px;
-    white-space: nowrap;
     border-bottom: 3px solid #ffffff;
     color: #ffffff;
     text-align: center;
@@ -139,7 +128,11 @@ h1 {
 }
 
 #home {
-    background-color: #191919;
+    background: var(--bg);
+}
+#home h1{
+    font-size: 80px;
+    line-height: 0.9;
 }
 
 #skills {
@@ -149,48 +142,52 @@ h1 {
     background-attachment: fixed;
     background-color: #201d1df3;
     background-blend-mode: multiply;
+    padding: 10em 0;
 }
 
 #xp {
     background-color: #bcbbb6e8;
+    height: fit-content;
+    padding: 10em 0;
 }
 
 #projects {
     color: white;
-    background-image: url(../img/dark_bg.webp),
-        linear-gradient(to top, black, transparent 50%);
-    background-blend-mode: overlay;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: fit-content;
-    padding: 6em 0;
+    background: black;
+    padding: 10em 0;
+    height: fit-content;;
+    border-bottom: 1px solid #ffffff76;
 }
 
 #projects .info,
 #skills .info {
     padding: 3em 0;
-    width: 95%;
     justify-content: center;
 }
 
 /* primeiro bloco */
 /*redes*/
+.wrapper-profile{
+    display: flex;
+    justify-content: center;
+    gap: 90px;  
+}
 .typing-effect {
     margin: 0;
     white-space: nowrap;
     overflow: hidden;
     border-right: 2px solid #71a34da9;
     width: 30ch;
-    animation: typing 2s steps(31), blink 0.5s step-end infinite;
+    animation: typing 2s steps(30), blink 0.5s step-end infinite;
 }
 
 @keyframes typing {
     from {
-        width: 1ch;
+        width: 0ch;
     }
 
     to {
-        width: 30ch;
+        width: 29ch;
     }
 }
 
@@ -237,16 +234,13 @@ h1 {
 
 /* card-foto */
 .card-foto {
-    padding: 0.2em;
-    display: flex;
     cursor: pointer;
 }
 
 .card-foto img {
     opacity: 0.7;
-    border: 2px solid #ffffff;
-    border-radius: 10em;
-    background-color: #ffffff;
+    box-shadow: 6px 5px 1px 2px var(--borderblue);
+    background-color:white;
 }
 
 /* segundo bloco */
@@ -256,6 +250,7 @@ h1 {
     font-weight: bold;
     line-height: 1.5;
     color: black;
+    padding: 2em;
 }
 
 /*barra de scroll*/
@@ -321,7 +316,6 @@ h1 {
 
 h4 {
     text-align: center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: bolder;
     color: #c0bebe
 }
@@ -330,6 +324,7 @@ h4 {
 /* qualificação */
 .wrapper-card-xp {
     width: 100%;
+    padding: 2em 0;
     display: flex;
     justify-content: center;
     color: black;
@@ -367,7 +362,7 @@ h2 {
     border-radius: 5em;
     cursor: pointer;
     margin-top: 1em;
-    box-shadow: 1px 3px 1px 1px black;
+    border: 1px solid white;
 }
 
 .download a {
@@ -395,6 +390,9 @@ h2 {
     transition: .5s;
     box-shadow: 4px 3px 10px 2px #565656c8;
     cursor: pointer;
+}
+.card img{
+    border-radius: 0 2em 0 0;
 }
 
 .card:hover {
@@ -453,7 +451,8 @@ h2 {
 /* Sexto bloco */
 /* XADREZ */
 .wrapper-jogo {
-    height: 100vh;
+    height: fit-content;
+    padding: 10em 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -566,14 +565,6 @@ footer {
 
 @media (max-width: 400px) {
 
-    #about .info {
-        padding: 3em 0;
-    }
-
-    .texto {
-        font-size: smaller;
-    }
-
     .skill-icons {
         padding: 0;
     }
@@ -581,16 +572,14 @@ footer {
     .skill-icons img {
         width: 68px;
     }
+
 }
 
-@media(max-width: 480px) {
+@media (max-width: 512px) {
     #skills {
         height: fit-content;
         padding: 10em 0;
     }
-}
-
-@media (max-width: 512px) {
     .download {
         width: 100px;
     }
@@ -599,15 +588,15 @@ footer {
         font-size: smaller;
 
     }
-
-    .canvas {
-        width: 18em;
-        height: 18em;
-    }
-
     #xp .info {
         width: 90%;
         padding: 1em 0;
+    }
+
+    #about .info,
+    #wrapper-play .info {
+        width: 100%;
+        padding: 0 2px ;
     }
 
     .div-xp img {
@@ -629,15 +618,29 @@ footer {
     .card-xp p {
         font-size: smaller;
     }
+    .texto{
+        padding: 2em 0;
+    }
+
     .texto-projeto{
         background-color:#000000ab;
         opacity: 1;
     }
+}
 
-    #wrapper-play .info {
-        width: 100%;
+@media (max-width: 650px){
+    .wrapper-profile{
+        flex-wrap: wrap-reverse;
+        gap: 20px;
     }
-
+    #home h1{
+        font-size: 40px;
+        text-align: left;
+    }
+    .canvas{
+        width: 21em;
+        height: 21em;
+    }
 }
 
 @media (max-width: 805px) {
@@ -649,26 +652,15 @@ footer {
         width: 95%;
     }
     
-    #xp {
-        padding: 0 2em;
-    }
-
-    #xp .info {
-        width: 100%;
-    }
-    
     .hamburguer-menu {
         display: block;
-    }
-    .card-foto img {
-        width: 200px;
     }
     header{
         position: sticky;
         top: 0;
         z-index: 1000;
     }
-    
+
 }
 
 /*menu mobile  */
@@ -689,7 +681,6 @@ footer {
 .menu-mobile a {
     color: #ffffffc1;
     text-decoration: none;
-    font-family: 'RobotoLight';
     font-weight: 900;
     font-size: 26px;
     cursor: pointer;
