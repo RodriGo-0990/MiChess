@@ -170,20 +170,20 @@ h1 {
 .wrapper-profile{
     display: flex;
     justify-content: center;
-    gap: 90px;  
+    gap: 100px;  
 }
 .typing-effect {
     margin: 0;
     white-space: nowrap;
     overflow: hidden;
     border-right: 2px solid #71a34da9;
-    width: 30ch;
-    animation: typing 2s steps(30), blink 0.5s step-end infinite;
+    width: 29.2ch;
+    animation: typing 2s steps(26), blink 0.5s step-end infinite;
 }
 
 @keyframes typing {
     from {
-        width: 0ch;
+        width: 1ch;
     }
 
     to {
@@ -437,6 +437,7 @@ h2 {
     font-size: medium;
     text-align: center;
     margin: 0;
+    border-radius: 0 2em 0 0;
     color: white;
     font-weight: 900;
     height: 100%;
@@ -572,7 +573,10 @@ footer {
     .skill-icons img {
         width: 68px;
     }
-
+    .canvas {
+        width: 19em;
+        height: 19em;
+    }
 }
 
 @media (max-width: 512px) {
@@ -581,7 +585,7 @@ footer {
         padding: 10em 0;
     }
     .download {
-        width: 100px;
+        width: 110px;
     }
 
     .download a {
@@ -636,11 +640,18 @@ footer {
     #home h1{
         font-size: 40px;
         text-align: left;
+        padding-left:15px;
     }
+    .card-foto img{
+        width: 12em;
+    }
+}
+@media (min-width:401px) and (max-width: 650px){
     .canvas{
         width: 21em;
         height: 21em;
     }
+
 }
 
 @media (max-width: 805px) {

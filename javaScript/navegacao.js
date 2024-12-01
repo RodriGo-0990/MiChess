@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //campos da pagina
     let wrapper = document.getElementById('home')
     let wrapperAbout = document.getElementById('about');
-    let wrapperXp   = document.getElementById('xp');
+    let wrapperXp = document.getElementById('xp');
     let wrapperProjects = document.getElementById("projects");
     let wrapperSkills = document.getElementById('skills');
     let wrapperJogo = document.querySelector(".wrapper-jogo");
@@ -116,28 +116,35 @@ reveal_.reveal('#title',
 reveal_.reveal('.texto',
     {
         duration: 2600,
-        origin:'bottom',
+        origin: 'bottom',
         distance: '15px',
     }
 )
 reveal_.reveal('.skill-icons',
     {
         duration: 2000,
-        origin:'bottom',
+        origin: 'bottom',
         distance: '15px',
     }
 )
 reveal_.reveal('.wrapper-card-xp',
     {
-        duration: 1000,
-        origin:'bottom',
+        duration: 2000,
+        origin: 'bottom',
         distance: '20px',
     }
 )
 reveal_.reveal('.card',
     {
-        duration: 1000,
-        origin:'bottom',
+        duration: 2000,
+        origin: 'bottom',
         distance: '20px',
     }
 )
+reveal_.reveal('.wrapper-canvas',
+    {
+        duration: 3000,
+        origin: 'bottom',
+        distance: '20px',
+    }
+)    
