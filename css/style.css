@@ -163,6 +163,7 @@ h1 {
 #skills .info {
     padding: 3em 0;
     justify-content: center;
+    align-items: center
 }
 
 /* primeiro bloco */
@@ -204,6 +205,9 @@ h1 {
 
 .profile {
     width: 30ch;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
 }
 
 .download-div {
@@ -245,12 +249,13 @@ h1 {
 
 /* segundo bloco */
 .texto {
-    text-align: center;
+    text-align: justify;
     font-size: medium;
     font-weight: bold;
     line-height: 1.5;
     color: black;
-    padding: 2em;
+    width: 60%;
+    padding: 3em;
 }
 
 /*barra de scroll*/
@@ -348,9 +353,18 @@ h2 {
     border-bottom: 3px solid;
     border-image: linear-gradient(to right, #f5f5dcad, transparent 80%) 1 round;
 }
+.subtitle-xp-card{
+    color: #323232;    
+}
 
 .date-xp-card {
     margin-top: 1em;
+    display: flex;
+    color: #323232;
+}
+.date-xp-card p{
+    display: flex;
+    align-items: self-end;
 }
 
 .download {
@@ -375,16 +389,15 @@ h2 {
 }
 
 /* Quinto bloco */
-/* projetos */
+/* projetos */  
 .card {
     margin: 0;
     border: 1px solid var(--borderblue);
     border-bottom: 7px solid var(--borderblue);
     border-right: 5px solid var(--borderblue);
     border-radius: 0 2em 0 0;
-    width: 30vw;
+    width: 368px;
     height: 300px;
-    display: flex;
     background-repeat: no-repeat;
     background-size: cover;
     transition: .5s;
@@ -630,6 +643,9 @@ footer {
         background-color:#000000ab;
         opacity: 1;
     }
+    .card {
+        width: 95%;
+    }   
 }
 
 @media (max-width: 650px){
@@ -641,9 +657,6 @@ footer {
         font-size: 40px;
         text-align: left;
         padding-left:15px;
-    }
-    .card-foto img{
-        width: 12em;
     }
 }
 @media (min-width:401px) and (max-width: 650px){
@@ -659,10 +672,9 @@ footer {
         display: none;
     }
 
-    .card {
+    .texto{
         width: 95%;
     }
-    
     .hamburguer-menu {
         display: block;
     }
