@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 //SCROLLREVEAL
-window.reveal_ = ScrollReveal({ reset: false })
+window.reveal_ = ScrollReveal({ reset: true })
 reveal_.reveal('.profile',
     {
         origin: 'left',
@@ -112,12 +112,15 @@ reveal_.reveal('.image-profile',
 reveal_.reveal('#title',
     {
         duration: 2500,
+        origin: 'right',
+        distance: '40px',
+        
     })
 reveal_.reveal('.texto',
     {
         duration: 2600,
-        origin: 'bottom',
-        distance: '15px',
+        origin: 'left',
+        distance: '75px',
     }
 )
 reveal_.reveal('.skill-icons',
