@@ -5,17 +5,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let wrapperXp = document.getElementById('xp');
     let wrapperProjects = document.getElementById("projects");
     let wrapperSkills = document.getElementById('skills');
-    let wrapperJogo = document.querySelector(".wrapper-jogo");
     //array dos campos
     let campos = [];
-    campos.push(wrapper, wrapperAbout, wrapperSkills, wrapperXp, wrapperProjects, wrapperJogo);
+    campos.push(wrapper, wrapperAbout, wrapperSkills, wrapperXp, wrapperProjects);
     //menu
     let home = document.getElementById('homemenu');
     let about = document.getElementById('aboutmenu');
     let skills = document.getElementById('skillsmenu');
     let xp = document.getElementById('xpmenu');
     let projects = document.getElementById('projmenu');
-    let play = document.getElementById('playmenu');
 
     //menu-mobile
     let hamburguer_icon = document.querySelector(".hamburguer-menu");
@@ -26,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let skills_mobile = document.getElementById('skillsmenu-mobile');
     let xp_mobile = document.getElementById('xpmenu-mobile');
     let projects_mobile = document.getElementById('projmenu-mobile');
-    let play_mobile = document.getElementById('playmenu-mobile');
 
     //função para navegação
     function movePage(num) {
@@ -52,9 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     projects.addEventListener("click", function () {
         movePage(4);
     });
-    play.addEventListener("click", function () {
-        movePage(5);
-    });
+   
 
     //listeners to mobile
     about_mobile.addEventListener("click", function () {
@@ -73,11 +68,8 @@ document.addEventListener("DOMContentLoaded", () => {
         movePage(4);
         menu_mobile.style.display = "none";
     });
-    play_mobile.addEventListener("click", function () {
-        movePage(5);
-        menu_mobile.style.display = "none";
-    });
-
+   
+    // abre e fecha menu mobile
     hamburguer_icon.addEventListener("click", function () {
         menu_mobile.style.display = "flex";
     })
@@ -144,10 +136,4 @@ reveal_.reveal('.card',
         distance: '20px',
     }
 )
-reveal_.reveal('.wrapper-canvas',
-    {
-        duration: 3000,
-        origin: 'bottom',
-        distance: '20px',
-    }
-)    
+ 
