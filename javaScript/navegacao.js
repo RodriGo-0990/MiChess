@@ -91,7 +91,7 @@ reveal_.reveal('.profile p',
     {
         origin: 'left',
         duration: 2700,
-        distance: '40px',
+        distance: '70px',
     })
 
 reveal_.reveal('.image-profile',
@@ -118,22 +118,22 @@ reveal_.reveal('.texto',
 reveal_.reveal('.skill-icons',
     {
         duration: 2000,
-        origin: 'bottom',
-        distance: '15px',
+        origin: 'left',
+        distance: '75px',
     }
 )
 reveal_.reveal('.wrapper-card-xp',
     {
         duration: 2000,
         origin: 'bottom',
-        distance: '20px',
+        distance: '75px',
     }
 )
-reveal_.reveal('.card',
+reveal_.reveal('.wrapper-projects',
     {
         duration: 2000,
-        origin: 'bottom',
-        distance: '20px',
+        origin: 'left',
+        distance: '75px',
     }
 )
  
