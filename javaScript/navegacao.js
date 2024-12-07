@@ -55,26 +55,32 @@ document.addEventListener("DOMContentLoaded", () => {
     about_mobile.addEventListener("click", function () {
         movePage(1);
         menu_mobile.style.display = "none";
+        document.body.style.overflow = "auto";
     });
     skills_mobile.addEventListener("click", function () {
         movePage(2);
         menu_mobile.style.display = "none";
+        document.body.style.overflow = "auto";
     });
     xp_mobile.addEventListener("click", function () {
         movePage(3);
         menu_mobile.style.display = "none";
+        document.body.style.overflow = "auto";
     });
     projects_mobile.addEventListener("click", function () {
         movePage(4);
         menu_mobile.style.display = "none";
+        document.body.style.overflow = "auto";
     });
    
     // abre e fecha menu mobile
     hamburguer_icon.addEventListener("click", function () {
         menu_mobile.style.display = "flex";
+        document.body.style.overflow = "hidden";
     })
     close_icon.addEventListener("click", function () {
         menu_mobile.style.display = "none";
+        document.body.style.overflow = "auto";
     })
 
 })
@@ -106,7 +112,14 @@ reveal_.reveal('#title',
         duration: 2500,
         origin: 'right',
         distance: '40px',
-        
+        beforeReveal: function (el) {
+            el.classList.remove('hidden');
+            el.classList.add('revealed');
+        },
+        afterReset: function (el) {
+            el.classList.remove('revealed');
+            el.classList.add('hidden');
+        }
     })
 reveal_.reveal('.texto',
     {
