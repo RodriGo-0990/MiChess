@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //descrições
     let madro_description = "E-commerce em desenvolvimento, utilizando ReactJs para construção de componentes, Redux para armazenamento de estado, o framework Express.js para requisições à API dos Correios para cálculo de fretes, e Api do Bing ERP para gerenciamento de estoque. Ainda será implementado o Back-end com banco de dados de clientes e gerenciamento de login e sessão"
-    let versa_description = "Site de uma empresa fictícia de consultoria financeira empresarial, com design de interface inspirado em sites de empresas do setor. O projeto está em desenvolvimento com ReactJs na criação de componentes reutilizáveis, faltando implementar apenas algumas seções do site."
+    let prime_description = "Site de uma empresa fictícia de consultoria financeira empresarial, com design de interface inspirado em sites de empresas do setor. O projeto está em desenvolvimento com ReactJs na criação de componentes reutilizáveis, faltando implementar apenas algumas seções do site."
     let chess_description = "Jogo de xadrez desenvolvido em JavaScript e HTML, a Inteligencia Artificial está sendo o grande desafio nesse projeto, e algumas regras de xeque e xeque-mate estão sendo implementadas, mas ja é possivel brincar com o jogo :)"
     let money_description = "Aplicativo mobile de gestão financeira pessoal desenvolvido com Flutter. Utilizando o padrão de arquitetura MVC, a aplicação ja está bem estruturada, integrando com um Back-end configurado em Nest.js. Uma Demo do projeto estará disponível em breve."
     // ADD EVENTS
@@ -59,10 +59,10 @@ document.addEventListener("DOMContentLoaded", () => {
         showModal();
     })
     versa.addEventListener("click", () => {
-        changeModal('Versa Finance',
-            versa_description,
-            'https://github.com/RodriGo-0990/sarti-finance',
-            'https://rodrigo-0990.github.io/sarti-finance/'
+        changeModal('Prime Finance',
+            prime_description,
+            'https://github.com/RodriGo-0990/Prime-finance',
+            'https://rodrigo-0990.github.io/Prime-finance/'
         )
         showModal();
     })
