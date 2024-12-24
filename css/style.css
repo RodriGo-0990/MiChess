@@ -30,7 +30,7 @@ header {
     width: 100%;
     background: black;
     position: fixed;
-    z-index: 9999;
+    z-index: 999;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,13 +45,81 @@ header {
     cursor: pointer;
 }
 
+/* icone menu mobile */
 .hamburguer-menu {
     display: none;
     position: absolute;
     left: 10px;
-    top: 10;
+    top:20px;
     cursor: pointer;
+    z-index: 9999;
+    height:20px;
+    width: 30px;
 }
+.meat{
+    border-radius:50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:white;
+    height: 3px;
+    width: 30px;
+    transition:.2s;
+}
+.hamburguer-menu-before{
+    border-radius:50px;
+    position: absolute;
+    top: 0;
+    background-color:#20509f;
+    height: 3px;
+    width: 10px;
+    transition: .2s;
+}
+.hamburguer-menu-after{
+    border-radius:50px;
+    position: absolute;
+    bottom: 0;
+    background-color:white;
+    height: 4px;
+    width: 20px;
+    transition: .2s;
+}
+/* open menu */
+.meat-open-menu{
+    border-radius:50px;
+    position: absolute;
+    top: 40%;
+    left: -10%;
+    transform: rotate(-40deg);
+    height: 3px;
+    width: 30px;
+    background-color: white; 
+    transition: .2s;
+}
+.hamburguer-menu-before-open-menu{
+    border-radius: 50px;
+    position: absolute;
+    top: 2px;
+    left: 5%;
+    transform: rotate(40deg);
+    height: 4px;
+    width: 10px;
+    background-color:white;
+    transition: .2s;
+}
+.hamburguer-menu-after-open-menu{
+    border-radius: 50px;
+    position: absolute;
+    bottom: 5px;
+    left: 25%;
+    transform: rotate(40deg);
+    height: 4px;
+    width: 20px;
+    background-color: #20509f;
+    transition: .2s;
+}
+/* --------- */
 
 nav {
     width: 100%;
@@ -543,7 +611,7 @@ h2 {
         opacity: 1;
     }
     .card {
-        background-color: #000000be;
+        background-color: #000000ac;
         background-blend-mode: multiply;
     }
 }
@@ -722,7 +790,7 @@ footer {
     top: 0;
     left: 0;
     bottom: 0;
-    z-index: 20000;
+    z-index: 99;
 }
 
 .menu-mobile a {

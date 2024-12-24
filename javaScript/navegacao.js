@@ -17,8 +17,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //menu-mobile
     let hamburguer_icon = document.querySelector(".hamburguer-menu");
-    let close_icon = document.querySelector(".close-menu");
+    let hamburguer_menu_before = document.querySelector(".hamburguer-menu-before");
+    let hamburguer_menu_after = document.querySelector(".hamburguer-menu-after");
     let menu_mobile = document.querySelector(".menu-mobile");
+    let meat = document.querySelector(".meat");
+    let portfolio = document.querySelector(".portfolio");
 
     let about_mobile = document.getElementById('aboutmenu-mobile');
     let skills_mobile = document.getElementById('skillsmenu-mobile');
@@ -54,35 +57,51 @@ document.addEventListener("DOMContentLoaded", () => {
     //listeners to mobile
     about_mobile.addEventListener("click", function () {
         movePage(1);
-        menu_mobile.style.display = "none";
-        document.body.style.overflow = "auto";
+        toggleMenuMobile();
     });
     skills_mobile.addEventListener("click", function () {
         movePage(2);
-        menu_mobile.style.display = "none";
-        document.body.style.overflow = "auto";
+        toggleMenuMobile();
     });
     xp_mobile.addEventListener("click", function () {
         movePage(3);
-        menu_mobile.style.display = "none";
-        document.body.style.overflow = "auto";
+       toggleMenuMobile();
     });
     projects_mobile.addEventListener("click", function () {
         movePage(4);
-        menu_mobile.style.display = "none";
-        document.body.style.overflow = "auto";
+        toggleMenuMobile();
     });
-   
+    
     // abre e fecha menu mobile
-    hamburguer_icon.addEventListener("click", function () {
-        menu_mobile.style.display = "flex";
-        document.body.style.overflow = "hidden";
-    })
-    close_icon.addEventListener("click", function () {
-        menu_mobile.style.display = "none";
-        document.body.style.overflow = "auto";
-    })
+    let open_close_menu = false;
+    hamburguer_icon.addEventListener("click",
+         toggleMenuMobile)
 
+    function toggleMenuClass(element, add, remove) {
+        element.classList.add(add);
+        element.classList.remove(remove);
+    }
+    
+    function toggleMenuMobile(){
+        open_close_menu = !open_close_menu;
+        if (open_close_menu) {
+            menu_mobile.style.display = "flex";
+            document.body.style.overflow = "hidden";
+            portfolio.style.pointerEvents = "none";
+            toggleMenuClass(meat, "meat-open-menu", "meat");
+            toggleMenuClass(hamburguer_menu_before, "hamburguer-menu-before-open-menu", "hamburguer-menu-before");
+            toggleMenuClass(hamburguer_menu_after, "hamburguer-menu-after-open-menu", "hamburguer-menu-after");
+        } else {
+            menu_mobile.style.display = "none";
+            document.body.style.overflow = "auto";
+            portfolio.style.pointerEvents = "auto";
+            toggleMenuClass(meat,"meat", "meat-open-menu");
+            toggleMenuClass(hamburguer_menu_before, "hamburguer-menu-before", "hamburguer-menu-before-open-menu");
+            toggleMenuClass(hamburguer_menu_after, "hamburguer-menu-after", "hamburguer-menu-after-open-menu");
+        }
+    }
+
+    
 })
 
 //SCROLLREVEAL
