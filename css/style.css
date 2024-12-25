@@ -71,9 +71,9 @@ header {
     border-radius:50px;
     position: absolute;
     top: 0;
-    background-color:#20509f;
+    background-color:white;
     height: 3px;
-    width: 10px;
+    width: 30px;
     transition: .2s;
 }
 .hamburguer-menu-after{
@@ -81,16 +81,16 @@ header {
     position: absolute;
     bottom: 0;
     background-color:white;
-    height: 4px;
-    width: 20px;
+    height: 3px;
+    width: 30px;
     transition: .2s;
 }
 /* open menu */
 .meat-open-menu{
     border-radius:50px;
     position: absolute;
-    top: 40%;
-    left: -10%;
+    top: 5px;
+    left: 0%;
     transform: rotate(-40deg);
     height: 3px;
     width: 30px;
@@ -100,24 +100,15 @@ header {
 .hamburguer-menu-before-open-menu{
     border-radius: 50px;
     position: absolute;
-    top: 2px;
-    left: 5%;
+    top: 5px;
     transform: rotate(40deg);
-    height: 4px;
-    width: 10px;
+    height: 3px;
+    width: 30px;
     background-color:white;
     transition: .2s;
 }
 .hamburguer-menu-after-open-menu{
-    border-radius: 50px;
-    position: absolute;
-    bottom: 5px;
-    left: 25%;
-    transform: rotate(40deg);
-    height: 4px;
-    width: 20px;
-    background-color: #20509f;
-    transition: .2s;
+ visibility: hidden;
 }
 /* --------- */
 
